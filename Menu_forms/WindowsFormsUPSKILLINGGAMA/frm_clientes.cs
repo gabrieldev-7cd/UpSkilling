@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsUPSKILLINGGAMA.Configurations;
 using WindowsFormsUPSKILLINGGAMA.Models;
 using WindowsFormsUPSKILLINGGAMA.Services;
 using WindowsFormsUPSKILLINGGAMA.Services.Interfaces;
@@ -19,7 +20,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         public frm_clientes()
         {
-            _clienteService = new ClienteService<ClienteModel>();
+            _clienteService = new ClienteService<ClienteModel>(TipoBaseEnum.Sql);
             InitializeComponent();
         }
 

@@ -1,12 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WindowsFormsUPSKILLINGGAMA.Services.Interfaces
+namespace WindowsFormsUPSKILLINGGAMA.DAL.Interfaces
 {
-    public interface IBaseService<T>
+    public interface IBaseRepository<T>
     {
         List<T> Listar(T entity);
         T Recuperar(T entity);

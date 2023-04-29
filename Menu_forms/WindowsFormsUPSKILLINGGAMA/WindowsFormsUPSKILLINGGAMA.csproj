@@ -94,6 +94,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ConfigurationBase.cs" />
+    <Compile Include="Configurations\TipoBaseEnum.cs" />
+    <Compile Include="DAL\CsvGenericRepository.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
+    <Compile Include="DAL\Interfaces\IBaseRepository.cs" />
+    <Compile Include="DAL\JsonGenericRepository.cs" />
+    <Compile Include="DAL\SqlGenericRepository.cs" />
     <Compile Include="frm_hist_vendas.cs">
       <SubType>Form</SubType>
     </Compile>
