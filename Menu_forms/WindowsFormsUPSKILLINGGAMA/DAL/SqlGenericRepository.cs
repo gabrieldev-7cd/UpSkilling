@@ -11,12 +11,10 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 {
     public class SqlGenericRepository<T> : IBaseRepository<T>
     {
-        private readonly SQLiteConnection _data;
         private readonly string _nomeTabela;
 
         public SqlGenericRepository()
         {
-            _data = ConectaBaseSql.Conexao();
             _nomeTabela = $"{typeof(T).Name.ToLower().Remove((typeof(T).Name.ToLower().Length - 5), 5)}s";
         }
 
@@ -49,7 +47,7 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
         {
             List<T> entidades = new List<T>();
 
-            using (var conexao = _data)
+            using (var conexao = ConectaBaseSql.Conexao())
             {
                 SQLiteDataAdapter dAdapter = null;
                 DataTable dTable = new DataTable();
@@ -96,13 +94,13 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
         {
             if (entity == null) return false;
 
-            var tipoEntidade = typeof(T).GetType();
+            var tipoEntidade = entity.GetType();
             var campos = string.Join(",", tipoEntidade.GetProperties().Select(pi => pi.Name.ToLower()));
             var valores = string.Join(",", tipoEntidade.GetProperties().Select(pi => "@" + pi.Name));
 
             var sql = $"INSERT INTO {_nomeTabela} ({campos}) VALUES ({valores})";
 
-            using (var conexao = _data)
+            using (var conexao = ConectaBaseSql.Conexao())
             {
                 conexao.Open();
 

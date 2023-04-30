@@ -26,7 +26,7 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public T Recuperar(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Recuperar(id);
         }
         public bool Cadastrar(T entity)
         {
@@ -35,12 +35,12 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Alterar(T entity)
         {
-            throw new NotImplementedException();
+            return _repository.Alterar(entity);
         }
 
         public bool Excluir(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Excluir(id);
         }
     }
 }
