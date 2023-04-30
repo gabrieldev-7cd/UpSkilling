@@ -93,7 +93,8 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Cadastrar(T entity)
         {
-            if (entity == null) return false;
+            if (entity == null) 
+                return false;
 
             var tipoEntidade = entity.GetType();
             var campos = string.Join(",", tipoEntidade.GetProperties().Select(pi => pi.Name.ToLower()));
@@ -128,7 +129,18 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Excluir(int id)
         {
-            throw new NotImplementedException();
+            var sql = $"DELETE FROM {_nomeTabela} WHERE ID = {id};";
+
+            using (var conexao = ConectaBaseSql.Conexao())
+            {
+                conexao.Open();
+
+                using (var command = new SQLiteCommand(sql, conexao))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+            return true;
         }
     }
 }

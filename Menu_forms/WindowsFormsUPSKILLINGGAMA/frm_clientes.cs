@@ -54,10 +54,11 @@ namespace WindowsFormsUPSKILLINGGAMA
 
             bool resultado = _clienteService.Cadastrar(this.txt_nome.Text, this.txt_telefone.Text);
 
-            MessageBox.Show(resultado == true ? "Cliente cadastrado com sucesso!" : "Não foi possível cadastrar o cliente!");
+            MessageBox.Show(resultado == true ? "Cliente cadastrado com sucesso!" 
+                : "Não foi possível cadastrar o cliente!");
 
-            cliente.Nome = string.Empty;
-            cliente.Telefone = string.Empty;
+            txt_nome.Text = string.Empty;
+            txt_telefone.Text = string.Empty;
 
             AtualizarDados();
         }
@@ -68,17 +69,20 @@ namespace WindowsFormsUPSKILLINGGAMA
 
             if (row != null)
             {
-                string idCliente = row.Cells["ID"].Value.ToString();
+                int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
                 string nomeCliente = row.Cells["Nome"].Value.ToString();
 
                 if (MessageBox.Show($"Tem certeza que deseja excluir o cliente: {nomeCliente} ?", 
                     "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Close();
+                    bool resultado = _clienteService.Excluir(idCliente);
+
+                    MessageBox.Show(resultado == true ? "Cliente excluido com sucesso!" 
+                        : "Não foi possível excluir o cliente!");
                 }
-
-
             }
+
+            AtualizarDados();
         }
 
         private void btn_sair_Click(object sender, EventArgs e)

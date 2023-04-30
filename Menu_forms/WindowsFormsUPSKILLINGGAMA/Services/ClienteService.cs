@@ -41,7 +41,7 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
 
         public bool Excluir(int id)
         {
-            throw new NotImplementedException();
+            return _clienteRepository.Excluir(id);
         }
     }
 }
