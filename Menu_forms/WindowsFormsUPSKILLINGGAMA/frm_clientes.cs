@@ -46,9 +46,9 @@ namespace WindowsFormsUPSKILLINGGAMA
             ClienteModel cliente = new ClienteModel();
 
             bool resultado = _clienteService.Cadastrar(this.txt_nome.Text, this.txt_telefone.Text);
+            AtualizarDados();
 
             MessageBox.Show(resultado == true ? "Cliente cadastrado com sucesso!" : "Não foi possível cadastrar o cliente!");
-
             cliente.Nome = string.Empty;
             cliente.Telefone = string.Empty;
         }
