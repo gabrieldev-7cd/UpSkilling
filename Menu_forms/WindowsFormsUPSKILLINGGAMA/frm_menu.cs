@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsUPSKILLINGGAMA.Configurations;
+using WindowsFormsUPSKILLINGGAMA.Models;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
     public partial class frm_menu : Form
     {
+        private ContextoOpcao contextoOpcao = new ContextoOpcao();
+
         public frm_menu()
         {
             InitializeComponent();
@@ -20,7 +18,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cdt_clientes_Click(object sender, EventArgs e)
         {
-            frm_clientes frm = new frm_clientes();
+            frm_clientes frm = new frm_clientes(contextoOpcao);
             frm.Show();
         }
 
@@ -38,7 +36,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_clientes frm = new frm_clientes();
+            frm_clientes frm = new frm_clientes(contextoOpcao);
             frm.Show();
         }
 
@@ -47,6 +45,22 @@ namespace WindowsFormsUPSKILLINGGAMA
             frm_veiculos frm = new frm_veiculos();
             frm.Show();
         }
-                
+
+        private void frm_menu_Load(object sender, EventArgs e)
+        {
+            string[] baseOptions = Enum.GetNames(typeof(TipoBaseEnum)).ToArray();
+            //Carrega as opções do painel de seleção de tipo base.
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = baseOptions;
+            //bSource.DataSource = Enum.GetNames(typeof(TipoBaseEnum)).Cast<int>().Select(x => x.ToString()).ToArray();
+            comboBox1.DataSource = bSource.DataSource;
+        }
+
+        private void selecao_base_Click(object sender, EventArgs e)
+        {
+            var opcao = comboBox1.SelectedIndex;
+            contextoOpcao.TipoBaseSelecionada = (TipoBaseEnum)opcao; // opcao passada pelo index.
+            panel1.Hide();
+        }
     }
 }

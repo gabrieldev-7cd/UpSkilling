@@ -5,7 +5,6 @@ namespace WindowsFormsUPSKILLINGGAMA.Configurations
 {
     public static class ConfigurationBase<T>
     {
-
         public static GenericRepository<T> SelecionaDriver(TipoBaseEnum driver)
         {
             switch(driver)

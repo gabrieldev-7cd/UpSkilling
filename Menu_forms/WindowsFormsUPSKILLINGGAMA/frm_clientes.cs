@@ -16,11 +16,11 @@ namespace WindowsFormsUPSKILLINGGAMA
 {
     public partial class frm_clientes : Form
     {
-        private IBaseService<ClienteModel> _clienteService;
+        private IClienteService _clienteService;
 
-        public frm_clientes()
+        public frm_clientes(ContextoOpcao contexto)
         {
-            _clienteService = new ClienteService<ClienteModel>(TipoBaseEnum.Sql);
+            _clienteService = new ClienteService(contexto.TipoBaseSelecionada);
             InitializeComponent();
         }
 
@@ -31,17 +31,26 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void frm_clientes_Load(object sender, EventArgs e)
         {
+            AtualizarDados();
+        }
 
+        private void AtualizarDados()
+        {
+            BindingSource dataBinding = new BindingSource();
+            dataBinding.DataSource = _clienteService.Listar();
+            dataGridView1.DataSource = dataBinding;
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             ClienteModel cliente = new ClienteModel();
 
-            cliente.Nome = this.txt_nome.Text;
-            cliente.Telefone = this.txt_telefone.Text;
+            bool resultado = _clienteService.Cadastrar(this.txt_nome.Text, this.txt_telefone.Text);
 
-            _clienteService.Cadastrar(cliente);
+            MessageBox.Show(resultado == true ? "Cliente cadastrado com sucesso!" : "Não foi possível cadastrar o cliente!");
+
+            cliente.Nome = string.Empty;
+            cliente.Telefone = string.Empty;
         }
     }
 }

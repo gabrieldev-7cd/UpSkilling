@@ -1,40 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using WindowsFormsUPSKILLINGGAMA.DAL;
+using WindowsFormsUPSKILLINGGAMA.Models;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
 using WindowsFormsUPSKILLINGGAMA.Services.Interfaces;
 
 namespace WindowsFormsUPSKILLINGGAMA.Services
 {
-    public class ClienteService<ClienteModel> : IBaseService<ClienteModel>
+    public class ClienteService : IClienteService
     {
         private readonly GenericRepository<ClienteModel> _clienteRepository;
 
         public ClienteService(TipoBaseEnum driver)
         {
-            ConfigurationBase<ClienteModel>.SelecionaDriver(driver);
+            _clienteRepository = ConfigurationBase<ClienteModel>.SelecionaDriver(driver);
         }
 
-        public List<ClienteModel> Listar(ClienteModel entity)
+        public List<ClienteModel> Listar()
         {
-            throw new NotImplementedException();
-        }
-        public ClienteModel Recuperar(ClienteModel entity)
-        {
-            throw new NotImplementedException();
+            return _clienteRepository.Listar();
         }
 
-        public ClienteModel Cadastrar(ClienteModel entity)
+        public ClienteModel Recuperar(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ClienteModel Alterar(ClienteModel entity)
+        public bool Cadastrar(string nome, string telefone)
+        {
+            int id = _clienteRepository.ObterId();
+            ClienteModel novoCliente = new ClienteModel(id, nome, telefone);
+
+            return _clienteRepository.Cadastrar(novoCliente);
+        }
+
+        public bool Alterar(string nome, string telefone)
         {
             throw new NotImplementedException();
         }
 
-        public bool Excluir(ClienteModel entity)
+        public bool Excluir(int id)
         {
             throw new NotImplementedException();
         }

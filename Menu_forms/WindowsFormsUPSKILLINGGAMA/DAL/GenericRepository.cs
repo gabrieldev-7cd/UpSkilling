@@ -7,33 +7,38 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
     public class GenericRepository<T> : IBaseRepository<T>
     {
-        private readonly IBaseRepository<T> _entity;
+        private readonly IBaseRepository<T> _repository;
 
-        public GenericRepository(IBaseRepository<T> entity)
+        public GenericRepository(IBaseRepository<T> repository)
         {
-            _entity = entity;
+            _repository = repository;
         }
 
-        public List<T> Listar(T entity)
+        public int ObterId()
+        {
+            return _repository.ObterId();
+        }
+
+        public List<T> Listar()
+        {
+           return _repository.Listar();
+        }
+
+        public T Recuperar(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public bool Cadastrar(T entity)
+        {
+            return _repository.Cadastrar(entity);
+        }
+
+        public bool Alterar(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Recuperar(T entity)
-        {
-            throw new NotImplementedException();
-        }
-        public T Cadastrar(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Alterar(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Excluir(T entity)
+        public bool Excluir(int id)
         {
             throw new NotImplementedException();
         }

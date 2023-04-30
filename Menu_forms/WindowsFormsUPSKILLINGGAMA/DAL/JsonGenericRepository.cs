@@ -7,26 +7,30 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 {
     public class JsonGenericRepository<T> : IBaseRepository<T>
     {
-        public List<T> Listar(T entity)
+        public List<T> Listar()
+        {
+            throw new NotImplementedException();
+        }
+        public T Recuperar(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public bool Cadastrar(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Recuperar(T entity)
-        {
-            throw new NotImplementedException();
-        }
-        public T Cadastrar(T entity)
+        public bool Alterar(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Alterar(T entity)
+        public bool Excluir(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Excluir(T entity)
+        public int ObterId()
         {
             throw new NotImplementedException();
         }
