@@ -90,6 +90,7 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
         {
             throw new NotImplementedException();
         }
+
         public bool Cadastrar(T entity)
         {
             if (entity == null) return false;

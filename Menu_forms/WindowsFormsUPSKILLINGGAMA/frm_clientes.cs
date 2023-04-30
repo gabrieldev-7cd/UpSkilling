@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,12 +39,18 @@ namespace WindowsFormsUPSKILLINGGAMA
         {
             BindingSource dataBinding = new BindingSource();
             dataBinding.DataSource = _clienteService.Listar();
-            dataGridView1.DataSource = dataBinding;
+            dataGridViewClientes.DataSource = dataBinding;
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             ClienteModel cliente = new ClienteModel();
+
+            if (string.IsNullOrWhiteSpace(txt_nome.Text) || string.IsNullOrWhiteSpace(txt_telefone.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
 
             bool resultado = _clienteService.Cadastrar(this.txt_nome.Text, this.txt_telefone.Text);
 
@@ -51,6 +58,36 @@ namespace WindowsFormsUPSKILLINGGAMA
 
             cliente.Nome = string.Empty;
             cliente.Telefone = string.Empty;
+
+            AtualizarDados();
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            var row = dataGridViewClientes.CurrentCell.OwningRow;
+
+            if (row != null)
+            {
+                string idCliente = row.Cells["ID"].Value.ToString();
+                string nomeCliente = row.Cells["Nome"].Value.ToString();
+
+                if (MessageBox.Show($"Tem certeza que deseja excluir o cliente: {nomeCliente} ?", 
+                    "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Close();
+                }
+
+
+            }
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", 
+                "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }
