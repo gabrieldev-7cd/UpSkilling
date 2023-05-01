@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -44,8 +45,6 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            ClienteModel cliente = new ClienteModel();
-
             if (string.IsNullOrWhiteSpace(txt_nome.Text) || string.IsNullOrWhiteSpace(txt_telefone.Text))
             {
                 MessageBox.Show("Preencha todos os campos!");
@@ -100,12 +99,41 @@ namespace WindowsFormsUPSKILLINGGAMA
 
             if (row != null)
             {
-                int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+                string nomeCliente = row.Cells["Nome"].Value.ToString();
+                string telefoneCliente = row.Cells["Telefone"].Value.ToString();
 
-                ClienteModel resultado = _clienteService.Recuperar(idCliente);
+                txtNameEdit.Text = nomeCliente;
+                txtPhoneNumberEdit.Text = telefoneCliente;
 
-                MessageBox.Show($"Dados do cliente:\n Nome: {resultado.Nome}, telefone: {resultado.Telefone}");
+                if (!string.IsNullOrWhiteSpace(txtNameEdit.Text) 
+                    && !string.IsNullOrWhiteSpace(txtPhoneNumberEdit.Text))
+                    btnSaveEdit.Enabled = true;
             }
+        }
+
+        private void btnSaveEdit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNameEdit.Text) 
+                || string.IsNullOrWhiteSpace(txtPhoneNumberEdit.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            var row = dataGridViewClientes.CurrentCell.OwningRow;
+            int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+
+            bool resultado = _clienteService.Alterar(idCliente, txtNameEdit.Text, txtPhoneNumberEdit.Text);
+
+            btnSaveEdit.Enabled = false;
+
+            MessageBox.Show(resultado == true ? "Dados atualizados com sucesso!"
+                : "Não foi possível atualizar o cliente!");
+
+            txtNameEdit.Text = string.Empty;
+            txtPhoneNumberEdit.Text = string.Empty;
+
+            AtualizarDados();
         }
     }
 }

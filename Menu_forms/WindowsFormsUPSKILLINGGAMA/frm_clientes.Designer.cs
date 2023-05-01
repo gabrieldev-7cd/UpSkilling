@@ -36,14 +36,19 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSaveEdit = new System.Windows.Forms.Button();
+            this.lblTelefoneEdit = new System.Windows.Forms.Label();
+            this.txtPhoneNumberEdit = new System.Windows.Forms.TextBox();
+            this.txtNameEdit = new System.Windows.Forms.TextBox();
+            this.lblNameEdit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(90, 25);
+            this.lbl_nome.Location = new System.Drawing.Point(11, 33);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(35, 13);
             this.lbl_nome.TabIndex = 0;
@@ -52,22 +57,22 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(131, 22);
+            this.txt_nome.Location = new System.Drawing.Point(52, 30);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(145, 20);
             this.txt_nome.TabIndex = 1;
             // 
             // txt_telefone
             // 
-            this.txt_telefone.Location = new System.Drawing.Point(145, 56);
+            this.txt_telefone.Location = new System.Drawing.Point(52, 64);
             this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(131, 20);
+            this.txt_telefone.Size = new System.Drawing.Size(145, 20);
             this.txt_telefone.TabIndex = 2;
             // 
             // lbl_telefone
             // 
             this.lbl_telefone.AutoSize = true;
-            this.lbl_telefone.Location = new System.Drawing.Point(90, 59);
+            this.lbl_telefone.Location = new System.Drawing.Point(-3, 67);
             this.lbl_telefone.Name = "lbl_telefone";
             this.lbl_telefone.Size = new System.Drawing.Size(49, 13);
             this.lbl_telefone.TabIndex = 3;
@@ -75,9 +80,9 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(307, 36);
+            this.btn_cadastrar.Location = new System.Drawing.Point(52, 90);
             this.btn_cadastrar.Name = "btn_cadastrar";
-            this.btn_cadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cadastrar.Size = new System.Drawing.Size(81, 42);
             this.btn_cadastrar.TabIndex = 4;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
@@ -85,9 +90,9 @@
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Location = new System.Drawing.Point(405, 36);
+            this.btn_excluir.Location = new System.Drawing.Point(475, 18);
             this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(75, 23);
+            this.btn_excluir.Size = new System.Drawing.Size(75, 42);
             this.btn_excluir.TabIndex = 5;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
@@ -95,9 +100,9 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(405, 65);
+            this.btn_sair.Location = new System.Drawing.Point(475, 67);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 23);
+            this.btn_sair.Size = new System.Drawing.Size(75, 42);
             this.btn_sair.TabIndex = 6;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
@@ -106,29 +111,77 @@
             // dataGridViewClientes
             // 
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(15, 94);
+            this.dataGridViewClientes.Location = new System.Drawing.Point(12, 160);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.RowHeadersWidth = 51;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(465, 194);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(538, 194);
             this.dataGridViewClientes.TabIndex = 7;
             // 
-            // btn_cancelar
+            // btnEdit
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(405, 7);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 8;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.btnEdit.Location = new System.Drawing.Point(288, 90);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 42);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btnSaveEdit
+            // 
+            this.btnSaveEdit.Location = new System.Drawing.Point(369, 90);
+            this.btnSaveEdit.Name = "btnSaveEdit";
+            this.btnSaveEdit.Size = new System.Drawing.Size(81, 42);
+            this.btnSaveEdit.TabIndex = 13;
+            this.btnSaveEdit.Text = "Salvar edição";
+            this.btnSaveEdit.UseVisualStyleBackColor = true;
+            this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
+            this.btnSaveEdit.Enabled = false;
+            // 
+            // lblTelefoneEdit
+            // 
+            this.lblTelefoneEdit.AutoSize = true;
+            this.lblTelefoneEdit.Location = new System.Drawing.Point(225, 67);
+            this.lblTelefoneEdit.Name = "lblTelefoneEdit";
+            this.lblTelefoneEdit.Size = new System.Drawing.Size(74, 13);
+            this.lblTelefoneEdit.TabIndex = 12;
+            this.lblTelefoneEdit.Text = "Novo telefone";
+            // 
+            // txtPhoneNumberEdit
+            // 
+            this.txtPhoneNumberEdit.Location = new System.Drawing.Point(305, 64);
+            this.txtPhoneNumberEdit.Name = "txtPhoneNumberEdit";
+            this.txtPhoneNumberEdit.Size = new System.Drawing.Size(145, 20);
+            this.txtPhoneNumberEdit.TabIndex = 11;
+            // 
+            // txtNameEdit
+            // 
+            this.txtNameEdit.Location = new System.Drawing.Point(305, 30);
+            this.txtNameEdit.Name = "txtNameEdit";
+            this.txtNameEdit.Size = new System.Drawing.Size(145, 20);
+            this.txtNameEdit.TabIndex = 10;
+            // 
+            // lblNameEdit
+            // 
+            this.lblNameEdit.AutoSize = true;
+            this.lblNameEdit.Location = new System.Drawing.Point(237, 33);
+            this.lblNameEdit.Name = "lblNameEdit";
+            this.lblNameEdit.Size = new System.Drawing.Size(62, 13);
+            this.lblNameEdit.TabIndex = 9;
+            this.lblNameEdit.Text = "Novo nome";
             // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(492, 300);
-            this.Controls.Add(this.btn_cancelar);
+            this.ClientSize = new System.Drawing.Size(562, 366);
+            this.Controls.Add(this.btnSaveEdit);
+            this.Controls.Add(this.lblTelefoneEdit);
+            this.Controls.Add(this.txtPhoneNumberEdit);
+            this.Controls.Add(this.txtNameEdit);
+            this.Controls.Add(this.lblNameEdit);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_excluir);
@@ -157,6 +210,11 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSaveEdit;
+        private System.Windows.Forms.Label lblTelefoneEdit;
+        private System.Windows.Forms.TextBox txtPhoneNumberEdit;
+        private System.Windows.Forms.TextBox txtNameEdit;
+        private System.Windows.Forms.Label lblNameEdit;
     }
 }

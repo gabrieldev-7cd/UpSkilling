@@ -173,7 +173,50 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Alterar(T entity)
         {
-            throw new NotImplementedException();
+            var tipoEntidade = typeof(T);
+
+            var sql = $"UPDATE {_nomeTabela} SET ";
+
+            var propriedades = tipoEntidade
+                                .GetProperties()
+                                .Where(pi => pi.PropertyType.IsPublic);
+
+            var parametros = new List<SQLiteParameter>();
+
+            foreach (var pi in propriedades)
+            {
+                var valorPropriedade = pi.GetValue(entity);
+                if (valorPropriedade != null)
+                {
+                    sql += $"{pi.Name} = @{pi.Name}, ";
+                    parametros.Add(new SQLiteParameter($"@{pi.Name}", valorPropriedade));
+                }
+            }
+
+            sql = sql.Substring(0, sql.Length - 2);
+
+            sql += $" WHERE Id = @Id";
+
+            using (var conexao = ConectaBaseSql.Conexao())
+            {
+                conexao.Open();
+
+                try
+                {
+                    using (var command = new SQLiteCommand(sql, conexao))
+                    {
+                        command.Parameters.AddRange(parametros.ToArray());
+                        command.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Houve um problema ao atualizar a tabela {_nomeTabela}: {ex.Message}");
+                }
+
+            }
         }
 
         public bool Excluir(int id)

@@ -34,9 +34,16 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
             return _clienteRepository.Cadastrar(novoCliente);
         }
 
-        public bool Alterar(string nome, string telefone)
+        public bool Alterar(int id, string nome, string telefone)
         {
-            throw new NotImplementedException();
+            ClienteModel cliente = new ClienteModel
+            {
+                Id = id, 
+                Nome = nome,
+                Telefone = telefone
+            };
+
+            return _clienteRepository.Alterar(cliente);
         }
 
         public bool Excluir(int id)
