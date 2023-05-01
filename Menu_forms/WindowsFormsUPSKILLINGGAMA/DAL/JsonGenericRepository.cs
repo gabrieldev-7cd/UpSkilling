@@ -76,7 +76,7 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
             if(ultimo != null && ultimo.GetType().GetProperty("Id") != null)
             {
-                return Convert.ToInt32(ultimo.GetType().GetProperty("Id")) + 1;
+                return Convert.ToInt32(ultimo.GetType().GetProperty("Id").GetValue(ultimo, null)) + 1;
             }
 
             return -1;
