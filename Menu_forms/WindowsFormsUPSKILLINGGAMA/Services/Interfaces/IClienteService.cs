@@ -9,7 +9,7 @@ namespace WindowsFormsUPSKILLINGGAMA.Services.Interfaces
         List<ClienteModel> Listar();
         ClienteModel Recuperar(int id);
         bool Cadastrar(string nome, string telefone);
-        bool Alterar(string nome, string telefone);
+        bool Alterar(int id, string nome, string telefone);
         bool Excluir(int id);
     }
 }
