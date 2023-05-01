@@ -93,5 +93,19 @@ namespace WindowsFormsUPSKILLINGGAMA
                 Close();
             }
         }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            var row = dataGridViewClientes.CurrentCell.OwningRow;
+
+            if (row != null)
+            {
+                int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+
+                ClienteModel resultado = _clienteService.Recuperar(idCliente);
+
+                MessageBox.Show($"Dados do cliente:\n Nome: {resultado.Nome}, telefone: {resultado.Telefone}");
+            }
+        }
     }
 }

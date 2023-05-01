@@ -23,7 +23,7 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
 
         public ClienteModel Recuperar(int id)
         {
-            throw new NotImplementedException();
+            return _clienteRepository.Recuperar(id);
         }
 
         public bool Cadastrar(string nome, string telefone)

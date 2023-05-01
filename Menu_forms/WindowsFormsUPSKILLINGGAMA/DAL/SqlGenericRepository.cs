@@ -65,12 +65,16 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
                         {
                             var entidade = Activator.CreateInstance(typeof(T));
 
-                            if (entidade == null) return new List<T>();
+                            if (entidade == null) 
+                                return new List<T>();
 
                             foreach (var pi in entidade.GetType().GetProperties())
                             {
                                 var piSet = entidade.GetType().GetProperty(pi.Name);
-                                if (piSet == null) continue;
+
+                                if (piSet == null) 
+                                    continue;
+
                                 piSet.SetValue(entidade, readr[pi.Name]);
                             }
 
@@ -88,7 +92,49 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public T Recuperar(int id)
         {
-            throw new NotImplementedException();
+            using (var conexao = ConectaBaseSql.Conexao())
+            {
+                conexao.Open();
+
+                var entidade = default(T);
+
+                var sql = $"SELECT * FROM {_nomeTabela} WHERE id = @id;";
+                using (var command = new SQLiteCommand(sql, conexao))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+
+                    try
+                    {
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                entidade = Activator.CreateInstance<T>();
+
+                                foreach (var property in entidade.GetType().GetProperties())
+                                {
+                                    var value = reader[property.Name];
+                                    if (value != DBNull.Value)
+                                    {
+                                        property.SetValue(entidade, value);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception($"Houve um problema ao ler da base: {ex}");
+                    }
+                }
+
+                if (entidade == null)
+                {
+                    throw new Exception($"Não foi encontrado registro com id {id}");
+                }
+
+                return entidade;
+            }
         }
 
         public bool Cadastrar(T entity)
@@ -111,7 +157,10 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
                     foreach (var pi in tipoEntidade.GetProperties())
                     {
                         var valor = pi.GetValue(entity);
-                        if (valor == null) continue;
+
+                        if (valor == null) 
+                            continue;
+
                         command.Parameters.AddWithValue(pi.Name.ToLower(), valor);
                     }
 
@@ -129,18 +178,34 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Excluir(int id)
         {
-            var sql = $"DELETE FROM {_nomeTabela} WHERE ID = {id};";
+            var sql = $"DELETE FROM {_nomeTabela} WHERE ID = @id;";
 
             using (var conexao = ConectaBaseSql.Conexao())
             {
                 conexao.Open();
 
-                using (var command = new SQLiteCommand(sql, conexao))
+                try
+                { 
+                    using (var command = new SQLiteCommand(sql, conexao))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+
+                        int updatedRows = command.ExecuteNonQuery();
+
+                        if (updatedRows != 1)
+                        {
+                            return false;
+                        }
+
+                        return true;
+                    }
+                }
+                catch (Exception ex)
                 {
-                    command.ExecuteNonQuery();
+                    throw new Exception($"Não foi possível realizar a exclusão: {ex}");
                 }
             }
-            return true;
+
         }
     }
 }
