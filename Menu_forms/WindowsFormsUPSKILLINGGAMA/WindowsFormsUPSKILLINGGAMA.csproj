@@ -122,6 +122,7 @@
   <ItemGroup>
     <Compile Include="Configurations\ConectaBaseSql.cs" />
     <Compile Include="Configurations\ConfigurationBase.cs" />
+    <Compile Include="Configurations\Mappings.cs" />
     <Compile Include="Configurations\TipoBaseEnum.cs" />
     <Compile Include="DAL\CsvGenericRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
@@ -154,6 +155,7 @@
       <DependentUpon>frm_veiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ClienteModel.cs" />
+    <Compile Include="Models\DTO\ListaVeiculoDto.cs" />
     <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Models\ContextoOpcao.cs" />
     <Compile Include="Models\VeiculoModel.cs" />
@@ -161,6 +163,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\Interfaces\IClienteService.cs" />
+    <Compile Include="Services\Interfaces\ITicketService.cs" />
+    <Compile Include="Services\Interfaces\IVeiculosService.cs" />
+    <Compile Include="Services\TicketService.cs" />
+    <Compile Include="Services\VeiculoService.cs" />
     <EmbeddedResource Include="frm_hist_vendas.resx">
       <DependentUpon>frm_hist_vendas.cs</DependentUpon>
     </EmbeddedResource>

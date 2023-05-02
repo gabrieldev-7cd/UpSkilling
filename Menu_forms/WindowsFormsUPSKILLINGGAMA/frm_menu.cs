@@ -24,13 +24,13 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cdt_veiculos_Click(object sender, EventArgs e)
         {
-            frm_veiculos frm = new frm_veiculos();
+            frm_veiculos frm = new frm_veiculos(contextoOpcao);
             frm.Show();
         }
 
         private void btn_hist_vendas_Click(object sender, EventArgs e)
         {
-            frm_hist_vendas frm = new frm_hist_vendas();
+            frm_hist_vendas frm = new frm_hist_vendas(contextoOpcao);
             frm.Show();
         }
 
@@ -42,7 +42,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void veiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_veiculos frm = new frm_veiculos();
+            frm_veiculos frm = new frm_veiculos(contextoOpcao);
             frm.Show();
         }
 
@@ -52,7 +52,6 @@ namespace WindowsFormsUPSKILLINGGAMA
             //Carrega as opções do painel de seleção de tipo base.
             BindingSource bSource = new BindingSource();
             bSource.DataSource = baseOptions;
-            //bSource.DataSource = Enum.GetNames(typeof(TipoBaseEnum)).Cast<int>().Select(x => x.ToString()).ToArray();
             comboBox1.DataSource = bSource.DataSource;
         }
 

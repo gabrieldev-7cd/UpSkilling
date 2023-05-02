@@ -1,6 +1,4 @@
-﻿
-
-namespace WindowsFormsUPSKILLINGGAMA.Configurations
+﻿namespace WindowsFormsUPSKILLINGGAMA.Configurations
 {
     public enum TipoServicoEnum
     {

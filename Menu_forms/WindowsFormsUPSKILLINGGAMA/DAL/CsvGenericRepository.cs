@@ -56,8 +56,6 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
             {
                 using(var csv = new CsvWriter(writer, _csvConfiguration))
                 {
-                    //csv.Context.RegisterClassMap<T>();
-
                     csv.WriteHeader<T>();
                     csv.NextRecord();
 

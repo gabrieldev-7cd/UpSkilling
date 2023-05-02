@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridTickets = new System.Windows.Forms.DataGridView();
             this.lbl_fil_data = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbl_fil_servico = new System.Windows.Forms.Label();
             this.cb_fil_servico = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridTickets
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(468, 209);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTickets.Location = new System.Drawing.Point(12, 79);
+            this.dataGridTickets.Name = "dataGridTickets";
+            this.dataGridTickets.Size = new System.Drawing.Size(468, 209);
+            this.dataGridTickets.TabIndex = 0;
             // 
             // lbl_fil_data
             // 
@@ -87,11 +87,12 @@
             this.Controls.Add(this.lbl_fil_servico);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbl_fil_data);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridTickets);
             this.Name = "frm_hist_vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Histórico de vendas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_hist_vendas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridTickets;
         private System.Windows.Forms.Label lbl_fil_data;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbl_fil_servico;

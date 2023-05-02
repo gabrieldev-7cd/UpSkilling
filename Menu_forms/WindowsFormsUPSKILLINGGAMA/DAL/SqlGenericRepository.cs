@@ -30,9 +30,10 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
                 using (var command = new SQLiteCommand(sql, conexao))
                 {
                     SQLiteDataReader readr = command.ExecuteReader();
-                    if (readr.HasRows)
+              
+                    while(readr.Read())
                     {
-                        while(readr.Read())
+                        if (readr[0].GetType() != typeof(DBNull))
                         {
                             id = Convert.ToInt32(readr[0]) + 1;
                         }
