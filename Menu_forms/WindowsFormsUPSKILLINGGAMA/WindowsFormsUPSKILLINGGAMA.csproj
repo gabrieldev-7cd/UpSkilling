@@ -122,8 +122,8 @@
   <ItemGroup>
     <Compile Include="Configurations\ConectaBaseSql.cs" />
     <Compile Include="Configurations\ConfigurationBase.cs" />
-    <Compile Include="Configurations\Mappings.cs" />
     <Compile Include="Configurations\TipoBaseEnum.cs" />
+    <Compile Include="Configurations\ValorServicocs.cs" />
     <Compile Include="DAL\CsvGenericRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="DAL\Interfaces\IBaseRepository.cs" />
@@ -147,6 +147,12 @@
     </Compile>
     <Compile Include="frm_clientes.Designer.cs">
       <DependentUpon>frm_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ticket.Designer.cs">
+      <DependentUpon>frm_ticket.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_veiculos.cs">
       <SubType>Form</SubType>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_clientes.resx">
       <DependentUpon>frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ticket.resx">
+      <DependentUpon>frm_ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_veiculos.resx">
       <DependentUpon>frm_veiculos.cs</DependentUpon>
@@ -206,7 +215,9 @@
   <ItemGroup>
     <None Include="Resources\Vaga.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Ticket_entrada - .JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

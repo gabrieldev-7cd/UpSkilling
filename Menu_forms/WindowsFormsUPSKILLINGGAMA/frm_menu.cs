@@ -61,5 +61,11 @@ namespace WindowsFormsUPSKILLINGGAMA
             contextoOpcao.TipoBaseSelecionada = (TipoBaseEnum)opcao; // opcao passada pelo index.
             panel1.Hide();
         }
+
+        private void btn_cad_ticket_Click(object sender, EventArgs e)
+        {
+            frm_ticket frm = new frm_ticket();
+            frm.Show();
+        }
     }
 }

@@ -48,7 +48,7 @@
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(11, 33);
+            this.lbl_nome.Location = new System.Drawing.Point(14, 33);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(35, 13);
             this.lbl_nome.TabIndex = 0;
@@ -57,14 +57,14 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(52, 30);
+            this.txt_nome.Location = new System.Drawing.Point(56, 30);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(145, 20);
             this.txt_nome.TabIndex = 1;
             // 
             // txt_telefone
             // 
-            this.txt_telefone.Location = new System.Drawing.Point(52, 64);
+            this.txt_telefone.Location = new System.Drawing.Point(56, 64);
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.Size = new System.Drawing.Size(145, 20);
             this.txt_telefone.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lbl_telefone
             // 
             this.lbl_telefone.AutoSize = true;
-            this.lbl_telefone.Location = new System.Drawing.Point(-3, 67);
+            this.lbl_telefone.Location = new System.Drawing.Point(0, 67);
             this.lbl_telefone.Name = "lbl_telefone";
             this.lbl_telefone.Size = new System.Drawing.Size(49, 13);
             this.lbl_telefone.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(52, 90);
+            this.btn_cadastrar.Location = new System.Drawing.Point(55, 90);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(81, 42);
             this.btn_cadastrar.TabIndex = 4;
@@ -129,6 +129,7 @@
             // 
             // btnSaveEdit
             // 
+            this.btnSaveEdit.Enabled = false;
             this.btnSaveEdit.Location = new System.Drawing.Point(369, 90);
             this.btnSaveEdit.Name = "btnSaveEdit";
             this.btnSaveEdit.Size = new System.Drawing.Size(81, 42);
@@ -136,7 +137,6 @@
             this.btnSaveEdit.Text = "Salvar edição";
             this.btnSaveEdit.UseVisualStyleBackColor = true;
             this.btnSaveEdit.Click += new System.EventHandler(this.btnSaveEdit_Click);
-            this.btnSaveEdit.Enabled = false;
             // 
             // lblTelefoneEdit
             // 

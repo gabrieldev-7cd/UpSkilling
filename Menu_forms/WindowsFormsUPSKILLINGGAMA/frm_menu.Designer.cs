@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pic_menu_estac = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,22 +36,15 @@
             this.btn_cdt_veiculos = new System.Windows.Forms.Button();
             this.btn_hist_venda = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.selecao_base = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).BeginInit();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pic_menu_estac = new System.Windows.Forms.PictureBox();
+            this.btn_cad_ticket = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic_menu_estac
-            // 
-            this.pic_menu_estac.Image = global::WindowsFormsUPSKILLINGGAMA.Properties.Resources.Vaga;
-            this.pic_menu_estac.Location = new System.Drawing.Point(-9, 30);
-            this.pic_menu_estac.Name = "pic_menu_estac";
-            this.pic_menu_estac.Size = new System.Drawing.Size(508, 279);
-            this.pic_menu_estac.TabIndex = 0;
-            this.pic_menu_estac.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -76,14 +68,14 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
-            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veiculosToolStripMenuItem_Click);
             // 
@@ -115,7 +107,7 @@
             // 
             this.btn_hist_venda.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_hist_venda.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_hist_venda.Location = new System.Drawing.Point(194, 42);
+            this.btn_hist_venda.Location = new System.Drawing.Point(286, 42);
             this.btn_hist_venda.Name = "btn_hist_venda";
             this.btn_hist_venda.Size = new System.Drawing.Size(75, 55);
             this.btn_hist_venda.TabIndex = 4;
@@ -133,23 +125,6 @@
             this.panel1.Size = new System.Drawing.Size(229, 119);
             this.panel1.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SELECIONE A BASE";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(50, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(116, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
             // selecao_base
             // 
             this.selecao_base.Location = new System.Drawing.Point(70, 73);
@@ -160,11 +135,50 @@
             this.selecao_base.UseVisualStyleBackColor = true;
             this.selecao_base.Click += new System.EventHandler(this.selecao_base_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(50, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(116, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(58, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SELECIONE A BASE";
+            // 
+            // pic_menu_estac
+            // 
+            this.pic_menu_estac.Image = global::WindowsFormsUPSKILLINGGAMA.Properties.Resources.Vaga;
+            this.pic_menu_estac.Location = new System.Drawing.Point(-9, 30);
+            this.pic_menu_estac.Name = "pic_menu_estac";
+            this.pic_menu_estac.Size = new System.Drawing.Size(508, 279);
+            this.pic_menu_estac.TabIndex = 0;
+            this.pic_menu_estac.TabStop = false;
+            // 
+            // btn_cad_ticket
+            // 
+            this.btn_cad_ticket.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_cad_ticket.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_cad_ticket.Location = new System.Drawing.Point(194, 42);
+            this.btn_cad_ticket.Name = "btn_cad_ticket";
+            this.btn_cad_ticket.Size = new System.Drawing.Size(75, 55);
+            this.btn_cad_ticket.TabIndex = 6;
+            this.btn_cad_ticket.Text = "Cadastrar Ticket";
+            this.btn_cad_ticket.UseVisualStyleBackColor = false;
+            this.btn_cad_ticket.Click += new System.EventHandler(this.btn_cad_ticket_Click);
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 300);
+            this.Controls.Add(this.btn_cad_ticket);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_hist_venda);
             this.Controls.Add(this.btn_cdt_veiculos);
@@ -175,11 +189,11 @@
             this.Name = "frm_menu";
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.frm_menu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +213,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button selecao_base;
+        private System.Windows.Forms.Button btn_cad_ticket;
     }
 }
 
