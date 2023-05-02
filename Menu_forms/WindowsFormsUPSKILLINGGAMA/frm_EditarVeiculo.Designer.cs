@@ -28,117 +28,122 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_editvei_marca = new System.Windows.Forms.Label();
-            this.txtNameEdit = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_old_marca = new System.Windows.Forms.Label();
+            this.txt_old_marca = new System.Windows.Forms.TextBox();
+            this.txt_old_modelo = new System.Windows.Forms.TextBox();
+            this.txt_old_placa = new System.Windows.Forms.TextBox();
+            this.txt_new_marca = new System.Windows.Forms.TextBox();
+            this.txt_new_modelo = new System.Windows.Forms.TextBox();
+            this.txt_new_placa = new System.Windows.Forms.TextBox();
+            this.lbl_old_modelo = new System.Windows.Forms.Label();
+            this.lbl_old_placa = new System.Windows.Forms.Label();
+            this.lbl_new_marca = new System.Windows.Forms.Label();
+            this.lbl_new_modelo = new System.Windows.Forms.Label();
+            this.lbl_new_placa = new System.Windows.Forms.Label();
             this.lbl_editvei_Cliente = new System.Windows.Forms.Label();
             this.cb_editvei_cliente = new System.Windows.Forms.ComboBox();
+            this.btn_save_newveiculo = new System.Windows.Forms.Button();
+            this.btn_excluir_registro = new System.Windows.Forms.Button();
+            this.btn_voltar_menuP = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_editvei_marca
+            // lbl_old_marca
             // 
-            this.lbl_editvei_marca.AutoSize = true;
-            this.lbl_editvei_marca.Location = new System.Drawing.Point(5, 78);
-            this.lbl_editvei_marca.Name = "lbl_editvei_marca";
-            this.lbl_editvei_marca.Size = new System.Drawing.Size(64, 13);
-            this.lbl_editvei_marca.TabIndex = 0;
-            this.lbl_editvei_marca.Text = "Marca Atual";
+            this.lbl_old_marca.AutoSize = true;
+            this.lbl_old_marca.Location = new System.Drawing.Point(10, 78);
+            this.lbl_old_marca.Name = "lbl_old_marca";
+            this.lbl_old_marca.Size = new System.Drawing.Size(64, 13);
+            this.lbl_old_marca.TabIndex = 0;
+            this.lbl_old_marca.Text = "Marca Atual";
             // 
-            // txtNameEdit
+            // txt_old_marca
             // 
-            this.txtNameEdit.Location = new System.Drawing.Point(71, 75);
-            this.txtNameEdit.Name = "txtNameEdit";
-            this.txtNameEdit.Size = new System.Drawing.Size(145, 20);
-            this.txtNameEdit.TabIndex = 11;
+            this.txt_old_marca.Location = new System.Drawing.Point(76, 75);
+            this.txt_old_marca.Name = "txt_old_marca";
+            this.txt_old_marca.Size = new System.Drawing.Size(145, 20);
+            this.txt_old_marca.TabIndex = 11;
             // 
-            // textBox1
+            // txt_old_modelo
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 12;
+            this.txt_old_modelo.Location = new System.Drawing.Point(76, 101);
+            this.txt_old_modelo.Name = "txt_old_modelo";
+            this.txt_old_modelo.Size = new System.Drawing.Size(145, 20);
+            this.txt_old_modelo.TabIndex = 12;
             // 
-            // textBox2
+            // txt_old_placa
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 13;
+            this.txt_old_placa.Location = new System.Drawing.Point(76, 127);
+            this.txt_old_placa.Name = "txt_old_placa";
+            this.txt_old_placa.Size = new System.Drawing.Size(145, 20);
+            this.txt_old_placa.TabIndex = 13;
             // 
-            // textBox3
+            // txt_new_marca
             // 
-            this.textBox3.Location = new System.Drawing.Point(348, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 20);
-            this.textBox3.TabIndex = 14;
+            this.txt_new_marca.Location = new System.Drawing.Point(348, 75);
+            this.txt_new_marca.Name = "txt_new_marca";
+            this.txt_new_marca.Size = new System.Drawing.Size(145, 20);
+            this.txt_new_marca.TabIndex = 14;
             // 
-            // textBox4
+            // txt_new_modelo
             // 
-            this.textBox4.Location = new System.Drawing.Point(348, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 20);
-            this.textBox4.TabIndex = 15;
+            this.txt_new_modelo.Location = new System.Drawing.Point(348, 101);
+            this.txt_new_modelo.Name = "txt_new_modelo";
+            this.txt_new_modelo.Size = new System.Drawing.Size(145, 20);
+            this.txt_new_modelo.TabIndex = 15;
             // 
-            // textBox5
+            // txt_new_placa
             // 
-            this.textBox5.Location = new System.Drawing.Point(348, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 20);
-            this.textBox5.TabIndex = 16;
+            this.txt_new_placa.Location = new System.Drawing.Point(348, 127);
+            this.txt_new_placa.Name = "txt_new_placa";
+            this.txt_new_placa.Size = new System.Drawing.Size(145, 20);
+            this.txt_new_placa.TabIndex = 16;
             // 
-            // label2
+            // lbl_old_modelo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "label2";
+            this.lbl_old_modelo.AutoSize = true;
+            this.lbl_old_modelo.Location = new System.Drawing.Point(5, 104);
+            this.lbl_old_modelo.Name = "lbl_old_modelo";
+            this.lbl_old_modelo.Size = new System.Drawing.Size(69, 13);
+            this.lbl_old_modelo.TabIndex = 17;
+            this.lbl_old_modelo.Text = "Modelo Atual";
             // 
-            // label3
+            // lbl_old_placa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "label3";
+            this.lbl_old_placa.AutoSize = true;
+            this.lbl_old_placa.Location = new System.Drawing.Point(13, 130);
+            this.lbl_old_placa.Name = "lbl_old_placa";
+            this.lbl_old_placa.Size = new System.Drawing.Size(61, 13);
+            this.lbl_old_placa.TabIndex = 18;
+            this.lbl_old_placa.Text = "Placa Atual";
             // 
-            // label4
+            // lbl_new_marca
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "label4";
+            this.lbl_new_marca.AutoSize = true;
+            this.lbl_new_marca.Location = new System.Drawing.Point(280, 78);
+            this.lbl_new_marca.Name = "lbl_new_marca";
+            this.lbl_new_marca.Size = new System.Drawing.Size(66, 13);
+            this.lbl_new_marca.TabIndex = 19;
+            this.lbl_new_marca.Text = "Nova Marca";
             // 
-            // label5
+            // lbl_new_modelo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "label5";
+            this.lbl_new_modelo.AutoSize = true;
+            this.lbl_new_modelo.Location = new System.Drawing.Point(275, 105);
+            this.lbl_new_modelo.Name = "lbl_new_modelo";
+            this.lbl_new_modelo.Size = new System.Drawing.Size(71, 13);
+            this.lbl_new_modelo.TabIndex = 20;
+            this.lbl_new_modelo.Text = "Novo Modelo";
             // 
-            // label6
+            // lbl_new_placa
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(307, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "label6";
+            this.lbl_new_placa.AutoSize = true;
+            this.lbl_new_placa.Location = new System.Drawing.Point(283, 131);
+            this.lbl_new_placa.Name = "lbl_new_placa";
+            this.lbl_new_placa.Size = new System.Drawing.Size(63, 13);
+            this.lbl_new_placa.TabIndex = 21;
+            this.lbl_new_placa.Text = "Nova Placa";
             // 
             // lbl_editvei_Cliente
             // 
@@ -152,32 +157,72 @@
             // cb_editvei_cliente
             // 
             this.cb_editvei_cliente.FormattingEnabled = true;
-            this.cb_editvei_cliente.Location = new System.Drawing.Point(71, 39);
+            this.cb_editvei_cliente.Location = new System.Drawing.Point(76, 39);
             this.cb_editvei_cliente.Name = "cb_editvei_cliente";
             this.cb_editvei_cliente.Size = new System.Drawing.Size(145, 21);
             this.cb_editvei_cliente.TabIndex = 23;
+            // 
+            // btn_save_newveiculo
+            // 
+            this.btn_save_newveiculo.Location = new System.Drawing.Point(523, 15);
+            this.btn_save_newveiculo.Name = "btn_save_newveiculo";
+            this.btn_save_newveiculo.Size = new System.Drawing.Size(75, 40);
+            this.btn_save_newveiculo.TabIndex = 24;
+            this.btn_save_newveiculo.Text = "Salvar Novo Veículo";
+            this.btn_save_newveiculo.UseVisualStyleBackColor = true;
+            // 
+            // btn_excluir_registro
+            // 
+            this.btn_excluir_registro.Location = new System.Drawing.Point(523, 61);
+            this.btn_excluir_registro.Name = "btn_excluir_registro";
+            this.btn_excluir_registro.Size = new System.Drawing.Size(75, 40);
+            this.btn_excluir_registro.TabIndex = 25;
+            this.btn_excluir_registro.Text = "Excluir Registro";
+            this.btn_excluir_registro.UseVisualStyleBackColor = true;
+            // 
+            // btn_voltar_menuP
+            // 
+            this.btn_voltar_menuP.Location = new System.Drawing.Point(523, 107);
+            this.btn_voltar_menuP.Name = "btn_voltar_menuP";
+            this.btn_voltar_menuP.Size = new System.Drawing.Size(75, 40);
+            this.btn_voltar_menuP.TabIndex = 26;
+            this.btn_voltar_menuP.Text = "Voltar ao Menu";
+            this.btn_voltar_menuP.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 177);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(582, 222);
+            this.dataGridView1.TabIndex = 27;
             // 
             // frm_EditarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(621, 411);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_voltar_menuP);
+            this.Controls.Add(this.btn_excluir_registro);
+            this.Controls.Add(this.btn_save_newveiculo);
             this.Controls.Add(this.cb_editvei_cliente);
             this.Controls.Add(this.lbl_editvei_Cliente);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtNameEdit);
-            this.Controls.Add(this.lbl_editvei_marca);
+            this.Controls.Add(this.lbl_new_placa);
+            this.Controls.Add(this.lbl_new_modelo);
+            this.Controls.Add(this.lbl_new_marca);
+            this.Controls.Add(this.lbl_old_placa);
+            this.Controls.Add(this.lbl_old_modelo);
+            this.Controls.Add(this.txt_new_placa);
+            this.Controls.Add(this.txt_new_modelo);
+            this.Controls.Add(this.txt_new_marca);
+            this.Controls.Add(this.txt_old_placa);
+            this.Controls.Add(this.txt_old_modelo);
+            this.Controls.Add(this.txt_old_marca);
+            this.Controls.Add(this.lbl_old_marca);
             this.Name = "frm_EditarVeiculo";
             this.Text = "Editar Cadastro de Veículos";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,19 +230,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_editvei_marca;
-        private System.Windows.Forms.TextBox txtNameEdit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_old_marca;
+        private System.Windows.Forms.TextBox txt_old_marca;
+        private System.Windows.Forms.TextBox txt_old_modelo;
+        private System.Windows.Forms.TextBox txt_old_placa;
+        private System.Windows.Forms.TextBox txt_new_marca;
+        private System.Windows.Forms.TextBox txt_new_modelo;
+        private System.Windows.Forms.TextBox txt_new_placa;
+        private System.Windows.Forms.Label lbl_old_modelo;
+        private System.Windows.Forms.Label lbl_old_placa;
+        private System.Windows.Forms.Label lbl_new_marca;
+        private System.Windows.Forms.Label lbl_new_modelo;
+        private System.Windows.Forms.Label lbl_new_placa;
         private System.Windows.Forms.Label lbl_editvei_Cliente;
         private System.Windows.Forms.ComboBox cb_editvei_cliente;
+        private System.Windows.Forms.Button btn_save_newveiculo;
+        private System.Windows.Forms.Button btn_excluir_registro;
+        private System.Windows.Forms.Button btn_voltar_menuP;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
