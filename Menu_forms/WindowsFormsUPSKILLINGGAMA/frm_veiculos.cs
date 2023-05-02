@@ -34,6 +34,11 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txt_marca.Text) || string.IsNullOrWhiteSpace(txt_modelo.Text) || string.IsNullOrWhiteSpace(txt_placa.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
             VeiculoModel veiculo = new VeiculoModel();
 
             veiculo.Modelo = this.txt_modelo.Text;
@@ -92,6 +97,38 @@ namespace WindowsFormsUPSKILLINGGAMA
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voltar ao Menu Principal?",
+               "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            var row = dataGridVeiculos.CurrentCell.OwningRow;
+
+            if (row != null)
+            {
+                int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+                string veiculo = row.Cells["Id"].Value != null ? row.Cells["IdCliente"].Value.ToString() : "";
+
+                if (MessageBox.Show($"Tem certeza que deseja excluir o cliente: {veiculo}?",
+                    "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool resultado = _clienteService.Excluir(idCliente);
+
+                    MessageBox.Show(resultado == true ? "Veículo excluído com sucesso!"
+                        : "Não foi possível excluir o cliente!");
+                }
+            }
+
+
+            AtualizarDados();
         }
     }
 }

@@ -44,7 +44,9 @@
             this.dt_saida = new System.Windows.Forms.DateTimePicker();
             this.lbl_dathra_entrada2 = new System.Windows.Forms.Label();
             this.lbl_dathra_saida = new System.Windows.Forms.Label();
-            this.lbl_vlr_pagamento = new System.Windows.Forms.Label();
+            this.lbl_vlr_servico = new System.Windows.Forms.Label();
+            this.lbl_tempo_estacionado = new System.Windows.Forms.Label();
+            this.btn_menu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -185,22 +187,44 @@
             this.lbl_dathra_saida.TabIndex = 34;
             this.lbl_dathra_saida.Text = "Data e Hora da saída";
             // 
-            // lbl_vlr_pagamento
+            // lbl_vlr_servico
             // 
-            this.lbl_vlr_pagamento.AutoSize = true;
-            this.lbl_vlr_pagamento.Location = new System.Drawing.Point(425, 294);
-            this.lbl_vlr_pagamento.Name = "lbl_vlr_pagamento";
-            this.lbl_vlr_pagamento.Size = new System.Drawing.Size(24, 13);
-            this.lbl_vlr_pagamento.TabIndex = 35;
-            this.lbl_vlr_pagamento.Text = "R$ ";
-            this.lbl_vlr_pagamento.Click += new System.EventHandler(this.label2_Click);
+            this.lbl_vlr_servico.AutoSize = true;
+            this.lbl_vlr_servico.Location = new System.Drawing.Point(425, 294);
+            this.lbl_vlr_servico.Name = "lbl_vlr_servico";
+            this.lbl_vlr_servico.Size = new System.Drawing.Size(24, 13);
+            this.lbl_vlr_servico.TabIndex = 35;
+            this.lbl_vlr_servico.Text = "R$ ";
+            this.lbl_vlr_servico.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lbl_tempo_estacionado
+            // 
+            this.lbl_tempo_estacionado.AutoSize = true;
+            this.lbl_tempo_estacionado.Location = new System.Drawing.Point(398, 226);
+            this.lbl_tempo_estacionado.Name = "lbl_tempo_estacionado";
+            this.lbl_tempo_estacionado.Size = new System.Drawing.Size(102, 13);
+            this.lbl_tempo_estacionado.TabIndex = 36;
+            this.lbl_tempo_estacionado.Text = "Tempo Estacionado";
+            // 
+            // btn_menu
+            // 
+            this.btn_menu.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_menu.Location = new System.Drawing.Point(220, 261);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(111, 23);
+            this.btn_menu.TabIndex = 37;
+            this.btn_menu.Text = "Voltar ao Menu";
+            this.btn_menu.UseVisualStyleBackColor = false;
+            this.btn_menu.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 371);
-            this.Controls.Add(this.lbl_vlr_pagamento);
+            this.Controls.Add(this.btn_menu);
+            this.Controls.Add(this.lbl_tempo_estacionado);
+            this.Controls.Add(this.lbl_vlr_servico);
             this.Controls.Add(this.lbl_dathra_saida);
             this.Controls.Add(this.lbl_dathra_entrada2);
             this.Controls.Add(this.txt_placa_sai);
@@ -244,6 +268,8 @@
         private System.Windows.Forms.DateTimePicker dt_saida;
         private System.Windows.Forms.Label lbl_dathra_entrada2;
         private System.Windows.Forms.Label lbl_dathra_saida;
-        private System.Windows.Forms.Label lbl_vlr_pagamento;
+        private System.Windows.Forms.Label lbl_vlr_servico;
+        private System.Windows.Forms.Label lbl_tempo_estacionado;
+        private System.Windows.Forms.Button btn_menu;
     }
 }

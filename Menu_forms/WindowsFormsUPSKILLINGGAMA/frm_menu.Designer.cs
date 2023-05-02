@@ -39,8 +39,8 @@
             this.selecao_base = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pic_menu_estac = new System.Windows.Forms.PictureBox();
             this.btn_cad_ticket = new System.Windows.Forms.Button();
+            this.pic_menu_estac = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).BeginInit();
@@ -152,15 +152,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SELECIONE A BASE";
             // 
-            // pic_menu_estac
-            // 
-            this.pic_menu_estac.Image = global::WindowsFormsUPSKILLINGGAMA.Properties.Resources.Vaga;
-            this.pic_menu_estac.Location = new System.Drawing.Point(-9, 30);
-            this.pic_menu_estac.Name = "pic_menu_estac";
-            this.pic_menu_estac.Size = new System.Drawing.Size(508, 279);
-            this.pic_menu_estac.TabIndex = 0;
-            this.pic_menu_estac.TabStop = false;
-            // 
             // btn_cad_ticket
             // 
             this.btn_cad_ticket.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -172,6 +163,15 @@
             this.btn_cad_ticket.Text = "Cadastrar Ticket";
             this.btn_cad_ticket.UseVisualStyleBackColor = false;
             this.btn_cad_ticket.Click += new System.EventHandler(this.btn_cad_ticket_Click);
+            // 
+            // pic_menu_estac
+            // 
+            this.pic_menu_estac.Image = global::WindowsFormsUPSKILLINGGAMA.Properties.Resources.Vaga;
+            this.pic_menu_estac.Location = new System.Drawing.Point(-9, 27);
+            this.pic_menu_estac.Name = "pic_menu_estac";
+            this.pic_menu_estac.Size = new System.Drawing.Size(508, 282);
+            this.pic_menu_estac.TabIndex = 0;
+            this.pic_menu_estac.TabStop = false;
             // 
             // frm_menu
             // 

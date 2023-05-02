@@ -33,6 +33,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbl_fil_servico = new System.Windows.Forms.Label();
             this.cb_fil_servico = new System.Windows.Forms.ComboBox();
+            this.btn_voltar_hist = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.dataGridTickets.Name = "dataGridTickets";
             this.dataGridTickets.Size = new System.Drawing.Size(468, 209);
             this.dataGridTickets.TabIndex = 0;
+            this.dataGridTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTickets_CellContentClick);
             // 
             // lbl_fil_data
             // 
@@ -77,12 +79,24 @@
             this.cb_fil_servico.Name = "cb_fil_servico";
             this.cb_fil_servico.Size = new System.Drawing.Size(121, 21);
             this.cb_fil_servico.TabIndex = 5;
+            this.cb_fil_servico.SelectedIndexChanged += new System.EventHandler(this.cb_fil_servico_SelectedIndexChanged);
+            // 
+            // btn_voltar_hist
+            // 
+            this.btn_voltar_hist.Location = new System.Drawing.Point(382, 50);
+            this.btn_voltar_hist.Name = "btn_voltar_hist";
+            this.btn_voltar_hist.Size = new System.Drawing.Size(98, 23);
+            this.btn_voltar_hist.TabIndex = 6;
+            this.btn_voltar_hist.Text = "Voltar aoMenu";
+            this.btn_voltar_hist.UseVisualStyleBackColor = true;
+            this.btn_voltar_hist.Click += new System.EventHandler(this.btn_voltar_hist_Click);
             // 
             // frm_hist_vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 300);
+            this.Controls.Add(this.btn_voltar_hist);
             this.Controls.Add(this.cb_fil_servico);
             this.Controls.Add(this.lbl_fil_servico);
             this.Controls.Add(this.dateTimePicker1);
@@ -105,5 +119,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbl_fil_servico;
         private System.Windows.Forms.ComboBox cb_fil_servico;
+        private System.Windows.Forms.Button btn_voltar_hist;
     }
 }

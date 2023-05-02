@@ -90,12 +90,13 @@
             // 
             // btn_excluir
             // 
+            this.btn_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_excluir.Location = new System.Drawing.Point(475, 18);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 42);
             this.btn_excluir.TabIndex = 5;
             this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.UseVisualStyleBackColor = false;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_sair
@@ -104,7 +105,7 @@
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(75, 42);
             this.btn_sair.TabIndex = 6;
-            this.btn_sair.Text = "Sair";
+            this.btn_sair.Text = "Voltar ao Menu";
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
@@ -116,6 +117,7 @@
             this.dataGridViewClientes.RowHeadersWidth = 51;
             this.dataGridViewClientes.Size = new System.Drawing.Size(538, 194);
             this.dataGridViewClientes.TabIndex = 7;
+            this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);
             // 
             // btnEdit
             // 

@@ -87,7 +87,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_sair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza que deseja sair da aplicação?", 
+            if (MessageBox.Show("Voltar ao Menu Principal?", 
                 "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
@@ -135,6 +135,26 @@ namespace WindowsFormsUPSKILLINGGAMA
             txtPhoneNumberEdit.Text = string.Empty;
 
             AtualizarDados();
+        }
+
+        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o evento ocorreu em uma célula válida
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Recupera a linha selecionada pelo usuário
+                DataGridViewRow row = dataGridViewClientes.Rows[e.RowIndex];
+
+                // Recupera os valores das colunas desejadas
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                int id_veiculo_dataentrada = Convert.ToInt32(row.Cells["ID_Veiculo_DataEntrada"].Value);
+                DateTime data_saida = Convert.ToDateTime(row.Cells["DataSaida"].Value);
+
+                // Faz o que for necessário com os valores obtidos
+                Console.WriteLine("ID: " + id);
+                Console.WriteLine("ID_Veiculo_DataEntrada: " + id_veiculo_dataentrada);
+                Console.WriteLine("DataSaida: " + data_saida);
+            }
         }
     }
 }

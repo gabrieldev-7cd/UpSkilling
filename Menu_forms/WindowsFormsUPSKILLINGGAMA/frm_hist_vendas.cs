@@ -43,5 +43,30 @@ namespace WindowsFormsUPSKILLINGGAMA
             dataGridTickets.DataSource = dataBinding;
             dataGridTickets.AllowUserToAddRows = false;
         }
+        private void cb_fil_servico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obter o tipo de serviço selecionado no ComboBox
+            foreach (var tipoServico in Enum.GetValues(typeof(TipoServicoEnum)))
+            {
+                
+            }
+        }
+
+        private void dataGridTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BindingSource dataBinding = new BindingSource();
+            dataBinding.DataSource = _ticketService.Listar();
+            dataGridTickets.DataSource = dataBinding;
+            dataGridTickets.AllowUserToAddRows = false;
+        }
+
+        private void btn_voltar_hist_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voltar ao Menu Principal?",
+                "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
     }
 }

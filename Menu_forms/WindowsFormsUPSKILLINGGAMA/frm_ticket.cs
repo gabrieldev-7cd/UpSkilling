@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
+using WindowsFormsUPSKILLINGGAMA.Models;
+using WindowsFormsUPSKILLINGGAMA.Services;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
@@ -91,7 +93,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void lbl_tpo_servico_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -100,35 +102,72 @@ namespace WindowsFormsUPSKILLINGGAMA
         }
 
         public void btn_reg_saida_Click(object sender, EventArgs e)
-        {/*
-            // Calcular o tempo de permanência do veículo
-            TimeSpan tempoPermanencia = dataHoraSaida - dataHoraEntrada;
+        {   
+            // Obter a data e hora atual
+            DateTime dataHoraSaida = DateTime.Now;
+            
+            // Obter a placa inserida pelo usuário
+            string placa = txt_placa_sai.Text.Trim().ToUpper();
 
-            // Calcular o valor total do serviço
-            double valorTotal = 0;
-            switch (tipoServico)
+            // Verificar se a placa já foi cadastrada
+            if (!placasCadastradas.Contains(placa))
             {
-                case TipoServicoEnum.Hora:
-                    valorTotal = tempoPermanencia.TotalHours * valorServico.Hora;
+                MessageBox.Show("Não foi encontrada nenhuma entrada para esta placa", "Placa não encontrada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            /*
+            // Encontrar o horário de entrada da placa
+            DateTime dataHoraEntrada = DateTime.MinValue;
+            foreach (var ticket in TicketModel)
+            {
+                if (ticket.Placa == placa)
+                {
+                    dataHoraEntrada = ticket.DataHoraEntrada;
                     break;
-                case TipoServicoEnum.Diaria:
-                    valorTotal = Math.Ceiling(tempoPermanencia.TotalDays) * valorServico.Diaria;
-                    break;
-                case TipoServicoEnum.Mensalista:
-                    valorTotal = valorServico.Mensalista;
-                    break;
+                }
+             }*/
+
+            // Definir o objeto ValorServico com os valores desejados
+
+            /*
+            // Calcular o valor do serviço
+            TimeSpan tempoEstacionado = dataHoraSaida - dataHoraEntrada;
+            double valorServico = 0;
+            if (tempoEstacionado.TotalDays >= 1)
+            {
+                valorServico = valorServico.Diaria * Math.Ceiling(tempoEstacionado.TotalDays);
+            }
+            else if (tempoEstacionado.TotalHours >= 1)
+            {
+                valorServico = valorServico.Hora * Math.Ceiling(tempoEstacionado.TotalHours);
+            }
+            else
+            {
+                valorServico = valorServico.Hora;
             }
 
-            // Exibir a placa, data e hora de entrada, tipo de serviço, data e hora de saída e valor total em um rótulo
-            lbl_placa.Text = $"Placa: {placa}";
-            lbl_dathra_entrada.Text = $"Data e hora de entrada: {dataHoraEntrada}";
-            lbl_tpo_servico.Text = $"Tipo de serviço: {tipoServico}";
-            lbl_dathra_saida.Text = $"Data e hora de saída: {dataHoraSaida}";
-            lbl_valor_total.Text = $"Valor total: R$ {valorTotal:F2}";
+            // Exibir os detalhes do ticket em um rótulo
+            lbl_dathra_saida.Text = dataHoraSaida.ToString();
+            lbl_tempo_estacionado.Text = $"Tempo estacionado: {tempoEstacionado}";
+            lbl_vlr_servico.Text = $"Valor do serviço: R${valorServico.ToString("0.00")}";  */
+
+            // Remover a placa da lista de placas cadastradas
+            placasCadastradas.Remove(placa);
+
+            // Limpar o campo de placa
+            txt_placa_sai.Text = "";
+           
         }
 
-        // Limpar o campo de placa
-        txt_placa_ent.Text = "";*/
+        private void button1_Click(object sender, EventArgs e)
+        {          
+             if (MessageBox.Show("Deseja voltar ao Menu Principal?",
+                 "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+             {
+                 Close();
+             }
+            
         }
     }
 }
