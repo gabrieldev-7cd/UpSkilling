@@ -73,6 +73,16 @@ namespace WindowsFormsUPSKILLINGGAMA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ticket_saida {
+            get {
+                object obj = ResourceManager.GetObject("Ticket_saida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Vaga {
             get {
                 object obj = ResourceManager.GetObject("Vaga", resourceCulture);
