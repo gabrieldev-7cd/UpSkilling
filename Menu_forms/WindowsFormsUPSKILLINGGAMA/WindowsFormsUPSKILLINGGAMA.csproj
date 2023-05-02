@@ -123,42 +123,48 @@
     <Compile Include="Configurations\ConectaBaseSql.cs" />
     <Compile Include="Configurations\ConfigurationBase.cs" />
     <Compile Include="Configurations\TipoBaseEnum.cs" />
+    <Compile Include="frm_EditarVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_EditarVeiculo.Designer.cs">
+      <DependentUpon>frm_EditarVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ValorServicoModel.cs" />
     <Compile Include="DAL\CsvGenericRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="DAL\Interfaces\IBaseRepository.cs" />
     <Compile Include="DAL\JsonGenericRepository.cs" />
     <Compile Include="DAL\SqlGenericRepository.cs" />
-    <Compile Include="frm_hist_vendas.cs">
+    <Compile Include="frm_Historico_Vendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_hist_vendas.Designer.cs">
-      <DependentUpon>frm_hist_vendas.cs</DependentUpon>
+    <Compile Include="frm_Historico_Vendas.Designer.cs">
+      <DependentUpon>frm_Historico_Vendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Configurations\TipoServicoEnum.cs" />
-    <Compile Include="frm_menu.cs">
+    <Compile Include="frm_Menu_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_menu.Designer.cs">
-      <DependentUpon>frm_menu.cs</DependentUpon>
+    <Compile Include="frm_Menu_Principal.Designer.cs">
+      <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_clientes.cs">
+    <Compile Include="frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_clientes.Designer.cs">
-      <DependentUpon>frm_clientes.cs</DependentUpon>
+    <Compile Include="frm_Clientes.Designer.cs">
+      <DependentUpon>frm_Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ticket.cs">
+    <Compile Include="frm_Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ticket.Designer.cs">
-      <DependentUpon>frm_ticket.cs</DependentUpon>
+    <Compile Include="frm_Ticket.Designer.cs">
+      <DependentUpon>frm_Ticket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_veiculos.cs">
+    <Compile Include="frm_Veiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_veiculos.Designer.cs">
-      <DependentUpon>frm_veiculos.cs</DependentUpon>
+    <Compile Include="frm_Veiculos.Designer.cs">
+      <DependentUpon>frm_Veiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Models\DTO\ListaVeiculoDto.cs" />
@@ -174,20 +180,23 @@
     <Compile Include="Services\TicketService.cs" />
     <Compile Include="Services\VeiculoService.cs" />
     <Compile Include="ValorServicoModel.cs" />
-    <EmbeddedResource Include="frm_hist_vendas.resx">
-      <DependentUpon>frm_hist_vendas.cs</DependentUpon>
+    <EmbeddedResource Include="frm_EditarVeiculo.resx">
+      <DependentUpon>frm_EditarVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_menu.resx">
-      <DependentUpon>frm_menu.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Historico_Vendas.resx">
+      <DependentUpon>frm_Historico_Vendas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_clientes.resx">
-      <DependentUpon>frm_clientes.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Menu_Principal.resx">
+      <DependentUpon>frm_Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ticket.resx">
-      <DependentUpon>frm_ticket.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Clientes.resx">
+      <DependentUpon>frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_veiculos.resx">
-      <DependentUpon>frm_veiculos.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Ticket.resx">
+      <DependentUpon>frm_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Veiculos.resx">
+      <DependentUpon>frm_Veiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

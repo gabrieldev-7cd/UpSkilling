@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA
 {
-    partial class frm_veiculos
+    partial class frm_Veiculos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.dataGridVeiculos = new System.Windows.Forms.DataGridView();
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
@@ -43,18 +43,19 @@
             this.cb_id_cliente = new System.Windows.Forms.ComboBox();
             this.txt_marca = new System.Windows.Forms.TextBox();
             this.lbl_marca = new System.Windows.Forms.Label();
+            this.btn_salvar_editv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_cancelar
+            // btn_editar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(404, 10);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 17;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.btn_editar.Location = new System.Drawing.Point(404, 10);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(49, 23);
+            this.btn_editar.TabIndex = 17;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_veiculos_Click);
             // 
             // dataGridVeiculos
             // 
@@ -86,7 +87,6 @@
             this.btn_excluir.TabIndex = 14;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_cadastrar
             // 
@@ -183,11 +183,22 @@
             this.lbl_marca.Text = "Marca";
             this.lbl_marca.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btn_salvar_editv
+            // 
+            this.btn_salvar_editv.Location = new System.Drawing.Point(453, 10);
+            this.btn_salvar_editv.Name = "btn_salvar_editv";
+            this.btn_salvar_editv.Size = new System.Drawing.Size(25, 23);
+            this.btn_salvar_editv.TabIndex = 25;
+            this.btn_salvar_editv.Text = "✅";
+            this.btn_salvar_editv.UseVisualStyleBackColor = true;
+            this.btn_salvar_editv.Click += new System.EventHandler(this.btn_salvar_editv_Click);
+            // 
             // frm_veiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 324);
+            this.Controls.Add(this.btn_salvar_editv);
             this.Controls.Add(this.txt_marca);
             this.Controls.Add(this.lbl_marca);
             this.Controls.Add(this.cb_id_cliente);
@@ -195,7 +206,7 @@
             this.Controls.Add(this.selectServico);
             this.Controls.Add(this.txt_placa);
             this.Controls.Add(this.lbl_placa);
-            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dataGridVeiculos);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_excluir);
@@ -215,7 +226,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.DataGridView dataGridVeiculos;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_excluir;
@@ -230,5 +241,6 @@
         private System.Windows.Forms.ComboBox cb_id_cliente;
         private System.Windows.Forms.TextBox txt_marca;
         private System.Windows.Forms.Label lbl_marca;
+        private System.Windows.Forms.Button btn_salvar_editv;
     }
 }

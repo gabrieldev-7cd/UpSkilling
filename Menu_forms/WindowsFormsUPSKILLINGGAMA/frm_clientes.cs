@@ -16,11 +16,11 @@ using WindowsFormsUPSKILLINGGAMA.Services.Interfaces;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_clientes : Form
+    public partial class frm_Clientes : Form
     {
         private IClienteService _clienteService;
 
-        public frm_clientes(ContextoOpcao contexto)
+        public frm_Clientes(ContextoOpcao contexto)
         {
             _clienteService = new ClienteService(contexto.TipoBaseSelecionada);
             InitializeComponent();
@@ -106,7 +106,7 @@ namespace WindowsFormsUPSKILLINGGAMA
                 txtNameEdit.Text = nomeCliente;
                 txtPhoneNumberEdit.Text = telefoneCliente;
 
-                if (!string.IsNullOrWhiteSpace(txtNameEdit.Text) 
+                if (!string.IsNullOrWhiteSpace(txtNameEdit.Text)
                     && !string.IsNullOrWhiteSpace(txtPhoneNumberEdit.Text))
                     btnSaveEdit.Enabled = true;
             }

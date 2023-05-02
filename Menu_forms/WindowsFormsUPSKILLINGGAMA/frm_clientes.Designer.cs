@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA
 {
-    partial class frm_clientes
+    partial class frm_Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -121,9 +121,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(288, 90);
+            this.btnEdit.Location = new System.Drawing.Point(305, 90);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 42);
+            this.btnEdit.Size = new System.Drawing.Size(58, 27);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.btnSaveEdit.Enabled = false;
             this.btnSaveEdit.Location = new System.Drawing.Point(369, 90);
             this.btnSaveEdit.Name = "btnSaveEdit";
-            this.btnSaveEdit.Size = new System.Drawing.Size(81, 42);
+            this.btnSaveEdit.Size = new System.Drawing.Size(81, 27);
             this.btnSaveEdit.TabIndex = 13;
             this.btnSaveEdit.Text = "Salvar edição";
             this.btnSaveEdit.UseVisualStyleBackColor = true;

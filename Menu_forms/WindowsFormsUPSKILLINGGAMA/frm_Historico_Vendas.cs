@@ -7,12 +7,12 @@ using WindowsFormsUPSKILLINGGAMA.Services;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_hist_vendas : Form
+    public partial class frm_Historico_Vendas : Form
     {
         private readonly VeiculoService _veiculoService;
         private readonly TicketService  _ticketService;
 
-        public frm_hist_vendas(ContextoOpcao contexto)
+        public frm_Historico_Vendas(ContextoOpcao contexto)
         {
             _ticketService = new TicketService(contexto.TipoBaseSelecionada);
             _veiculoService = new VeiculoService(contexto.TipoBaseSelecionada);

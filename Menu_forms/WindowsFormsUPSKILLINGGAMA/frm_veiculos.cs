@@ -14,12 +14,12 @@ using WindowsFormsUPSKILLINGGAMA.Services;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_veiculos : Form
+    public partial class frm_Veiculos : Form
     {
         private readonly VeiculoService _veiculoService;
         private readonly ClienteService _clienteService;
 
-        public frm_veiculos(ContextoOpcao contexto)
+        public frm_Veiculos(ContextoOpcao contexto)
         {
             _veiculoService = new VeiculoService(contexto.TipoBaseSelecionada);
             _clienteService = new ClienteService(contexto.TipoBaseSelecionada);
@@ -94,9 +94,10 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         }
 
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_editar_veiculos_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            frm_EditarVeiculo frm = new frm_EditarVeiculo();
+            frm.Show();
         }
 
         private void btn_sair_Click(object sender, EventArgs e)
@@ -129,6 +130,32 @@ namespace WindowsFormsUPSKILLINGGAMA
 
 
             AtualizarDados();
+        }
+
+        private void btn_salvar_editv_Click(object sender, EventArgs e)
+        {/*
+            if (string.IsNullOrWhiteSpace(txt_marca.Text)
+                || string.IsNullOrWhiteSpace(txt_modelo.Text)
+                || string.IsNullOrWhiteSpace(txt_placa.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            var row = dataGridViewClientes.CurrentCell.OwningRow;
+            int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+
+            bool resultado = _clienteService.Alterar(idCliente, txt_marca.Text, txtPhoneNumberEdit.Text);
+
+            btnSaveEdit.Enabled = false;
+
+            MessageBox.Show(resultado == true ? "Dados atualizados com sucesso!"
+                : "Não foi possível atualizar o cliente!");
+
+            txtNameEdit.Text = string.Empty;
+            txtPhoneNumberEdit.Text = string.Empty;
+
+            AtualizarDados();*/
         }
     }
 }

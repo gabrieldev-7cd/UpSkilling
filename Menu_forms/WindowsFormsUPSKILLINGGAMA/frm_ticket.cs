@@ -15,13 +15,13 @@ using WindowsFormsUPSKILLINGGAMA.Services;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_ticket : Form
+    public partial class frm_Ticket : Form
 
     {
         // Lista para armazenar as placas já cadastradas
         List<string> placasCadastradas = new List<string>();
 
-        public frm_ticket()
+        public frm_Ticket()
         {
             InitializeComponent();
 

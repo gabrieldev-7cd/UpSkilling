@@ -6,11 +6,11 @@ using WindowsFormsUPSKILLINGGAMA.Models;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_menu : Form
+    public partial class frm_Menu_Principal : Form
     {
         private ContextoOpcao contextoOpcao = new ContextoOpcao();
 
-        public frm_menu()
+        public frm_Menu_Principal()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -18,31 +18,31 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cdt_clientes_Click(object sender, EventArgs e)
         {
-            frm_clientes frm = new frm_clientes(contextoOpcao);
+            frm_Clientes frm = new frm_Clientes(contextoOpcao);
             frm.Show();
         }
 
         private void btn_cdt_veiculos_Click(object sender, EventArgs e)
         {
-            frm_veiculos frm = new frm_veiculos(contextoOpcao);
+            frm_Veiculos frm = new frm_Veiculos(contextoOpcao);
             frm.Show();
         }
 
         private void btn_hist_vendas_Click(object sender, EventArgs e)
         {
-            frm_hist_vendas frm = new frm_hist_vendas(contextoOpcao);
+            frm_Historico_Vendas frm = new frm_Historico_Vendas(contextoOpcao);
             frm.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_clientes frm = new frm_clientes(contextoOpcao);
+            frm_Clientes frm = new frm_Clientes(contextoOpcao);
             frm.Show();
         }
 
         private void veiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_veiculos frm = new frm_veiculos(contextoOpcao);
+            frm_Veiculos frm = new frm_Veiculos(contextoOpcao);
             frm.Show();
         }
 
@@ -64,7 +64,29 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cad_ticket_Click(object sender, EventArgs e)
         {
-            frm_ticket frm = new frm_ticket();
+            frm_Ticket frm = new frm_Ticket();
+            frm.Show();
+        }
+
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Historico_Vendas frm = new frm_Historico_Vendas(contextoOpcao);
+            frm.Show();
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ticketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Ticket frm = new frm_Ticket();
             frm.Show();
         }
     }

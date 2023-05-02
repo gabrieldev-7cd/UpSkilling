@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA
 {
-    partial class frm_menu
+    partial class frm_Menu_Principal
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_cad_ticket = new System.Windows.Forms.Button();
             this.pic_menu_estac = new System.Windows.Forms.PictureBox();
+            this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_menu_estac)).BeginInit();
@@ -49,7 +52,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem});
+            this.cadastrosToolStripMenuItem,
+            this.históricoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(492, 24);
@@ -60,22 +64,24 @@
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.veículosToolStripMenuItem});
+            this.veículosToolStripMenuItem,
+            this.ticketToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            this.cadastrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
-            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veiculosToolStripMenuItem_Click);
             // 
@@ -173,6 +179,29 @@
             this.pic_menu_estac.TabIndex = 0;
             this.pic_menu_estac.TabStop = false;
             // 
+            // ticketToolStripMenuItem
+            // 
+            this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ticketToolStripMenuItem.Text = "Ticket";
+            this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
+            // 
+            // históricoToolStripMenuItem
+            // 
+            this.históricoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vendasToolStripMenuItem});
+            this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.históricoToolStripMenuItem.Text = "Histórico";
+            this.históricoToolStripMenuItem.Click += new System.EventHandler(this.históricoToolStripMenuItem_Click);
+            // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +243,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button selecao_base;
         private System.Windows.Forms.Button btn_cad_ticket;
+        private System.Windows.Forms.ToolStripMenuItem ticketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
     }
 }
 

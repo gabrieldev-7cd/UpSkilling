@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA
 {
-    partial class frm_ticket
+    partial class frm_Ticket
     {
         /// <summary>
         /// Required designer variable.

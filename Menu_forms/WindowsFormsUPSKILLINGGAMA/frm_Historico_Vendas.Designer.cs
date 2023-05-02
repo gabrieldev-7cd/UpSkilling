@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA
 {
-    partial class frm_hist_vendas
+    partial class frm_Historico_Vendas
     {
         /// <summary>
         /// Required designer variable.
