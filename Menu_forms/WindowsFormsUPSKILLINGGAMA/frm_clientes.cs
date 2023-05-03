@@ -18,6 +18,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 {
     public partial class frm_Clientes : Form
     {
+        private ContextoOpcao contextoOpcao = new ContextoOpcao();
         private IClienteService _clienteService;
 
         public frm_Clientes(ContextoOpcao contexto)
@@ -159,8 +160,8 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_chama_cdtvei_Click(object sender, EventArgs e)
         {
-            /*frm_Veiculos frm = new frm_Veiculos ();
-            frm.Show();*/
+            frm_Veiculos frm = new frm_Veiculos(contextoOpcao);
+            frm.Show();
         }
     }
 }
