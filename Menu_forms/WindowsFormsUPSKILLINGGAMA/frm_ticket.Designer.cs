@@ -179,6 +179,7 @@
             this.cb_veiculo_entrada.Name = "cb_veiculo_entrada";
             this.cb_veiculo_entrada.Size = new System.Drawing.Size(166, 21);
             this.cb_veiculo_entrada.TabIndex = 38;
+            this.cb_veiculo_entrada.SelectedIndexChanged += new System.EventHandler(this.cb_veiculo_entrada_SelectedIndexChanged);
             // 
             // cb_veiculo_saida
             // 

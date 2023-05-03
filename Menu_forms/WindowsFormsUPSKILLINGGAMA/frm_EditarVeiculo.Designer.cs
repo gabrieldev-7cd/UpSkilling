@@ -64,6 +64,7 @@
             this.txt_old_marca.Name = "txt_old_marca";
             this.txt_old_marca.Size = new System.Drawing.Size(145, 20);
             this.txt_old_marca.TabIndex = 11;
+            this.txt_old_marca.TextChanged += new System.EventHandler(this.txt_old_marca_TextChanged);
             // 
             // txt_old_modelo
             // 
@@ -161,6 +162,7 @@
             this.cb_editvei_cliente.Name = "cb_editvei_cliente";
             this.cb_editvei_cliente.Size = new System.Drawing.Size(145, 21);
             this.cb_editvei_cliente.TabIndex = 23;
+            this.cb_editvei_cliente.SelectedIndexChanged += new System.EventHandler(this.cb_editvei_cliente_SelectedIndexChanged);
             // 
             // btn_save_newveiculo
             // 
@@ -170,15 +172,17 @@
             this.btn_save_newveiculo.TabIndex = 24;
             this.btn_save_newveiculo.Text = "Salvar Novo Veículo";
             this.btn_save_newveiculo.UseVisualStyleBackColor = true;
+            this.btn_save_newveiculo.Click += new System.EventHandler(this.btn_save_newveiculo_Click);
             // 
             // btn_excluir_registro
             // 
+            this.btn_excluir_registro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_excluir_registro.Location = new System.Drawing.Point(523, 61);
             this.btn_excluir_registro.Name = "btn_excluir_registro";
             this.btn_excluir_registro.Size = new System.Drawing.Size(75, 40);
             this.btn_excluir_registro.TabIndex = 25;
             this.btn_excluir_registro.Text = "Excluir Registro";
-            this.btn_excluir_registro.UseVisualStyleBackColor = true;
+            this.btn_excluir_registro.UseVisualStyleBackColor = false;
             // 
             // btn_voltar_menuP
             // 

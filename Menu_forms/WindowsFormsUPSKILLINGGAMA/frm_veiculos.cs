@@ -157,5 +157,10 @@ namespace WindowsFormsUPSKILLINGGAMA
 
             AtualizarDados();*/
         }
+
+        private void cb_id_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

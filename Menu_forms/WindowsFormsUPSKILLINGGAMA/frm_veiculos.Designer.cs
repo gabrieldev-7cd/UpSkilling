@@ -43,7 +43,6 @@
             this.cb_id_cliente = new System.Windows.Forms.ComboBox();
             this.txt_marca = new System.Windows.Forms.TextBox();
             this.lbl_marca = new System.Windows.Forms.Label();
-            this.btn_salvar_editv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +50,7 @@
             // 
             this.btn_editar.Location = new System.Drawing.Point(404, 10);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(49, 23);
+            this.btn_editar.Size = new System.Drawing.Size(73, 23);
             this.btn_editar.TabIndex = 17;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
@@ -164,6 +163,7 @@
             this.cb_id_cliente.Name = "cb_id_cliente";
             this.cb_id_cliente.Size = new System.Drawing.Size(121, 21);
             this.cb_id_cliente.TabIndex = 22;
+            this.cb_id_cliente.SelectedIndexChanged += new System.EventHandler(this.cb_id_cliente_SelectedIndexChanged);
             // 
             // txt_marca
             // 
@@ -183,22 +183,11 @@
             this.lbl_marca.Text = "Marca";
             this.lbl_marca.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btn_salvar_editv
-            // 
-            this.btn_salvar_editv.Location = new System.Drawing.Point(453, 10);
-            this.btn_salvar_editv.Name = "btn_salvar_editv";
-            this.btn_salvar_editv.Size = new System.Drawing.Size(25, 23);
-            this.btn_salvar_editv.TabIndex = 25;
-            this.btn_salvar_editv.Text = "✅";
-            this.btn_salvar_editv.UseVisualStyleBackColor = true;
-            this.btn_salvar_editv.Click += new System.EventHandler(this.btn_salvar_editv_Click);
-            // 
-            // frm_veiculos
+            // frm_Veiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 324);
-            this.Controls.Add(this.btn_salvar_editv);
             this.Controls.Add(this.txt_marca);
             this.Controls.Add(this.lbl_marca);
             this.Controls.Add(this.cb_id_cliente);
@@ -214,7 +203,7 @@
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.txt_modelo);
             this.Controls.Add(this.lbl_id_cliente);
-            this.Name = "frm_veiculos";
+            this.Name = "frm_Veiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículos";
             this.Load += new System.EventHandler(this.frm_veiculos_Load);
@@ -241,6 +230,5 @@
         private System.Windows.Forms.ComboBox cb_id_cliente;
         private System.Windows.Forms.TextBox txt_marca;
         private System.Windows.Forms.Label lbl_marca;
-        private System.Windows.Forms.Button btn_salvar_editv;
     }
 }

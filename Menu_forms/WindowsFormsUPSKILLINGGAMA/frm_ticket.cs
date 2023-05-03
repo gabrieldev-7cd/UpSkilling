@@ -162,5 +162,10 @@ namespace WindowsFormsUPSKILLINGGAMA
                 cb_veiculo_saida.DataSource = bindingSource;
             }
         }
+
+        private void cb_veiculo_entrada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
