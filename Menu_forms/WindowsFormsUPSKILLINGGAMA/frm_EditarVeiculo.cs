@@ -13,7 +13,7 @@ using WindowsFormsUPSKILLINGGAMA.Models.DTO;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
-    public partial class frm_EditarVeiculo : Form
+    public partial class frm_EditarVeiculo : Form 
     {
         public frm_EditarVeiculo()
         {
@@ -49,6 +49,11 @@ namespace WindowsFormsUPSKILLINGGAMA
         private void txt_old_marca_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1 = 
         }
     }
 }

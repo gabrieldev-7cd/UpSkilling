@@ -42,6 +42,7 @@
             this.txtPhoneNumberEdit = new System.Windows.Forms.TextBox();
             this.txtNameEdit = new System.Windows.Forms.TextBox();
             this.lblNameEdit = new System.Windows.Forms.Label();
+            this.btn_chama_cdtvei = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,12 +173,23 @@
             this.lblNameEdit.TabIndex = 9;
             this.lblNameEdit.Text = "Novo nome";
             // 
-            // frm_clientes
+            // btn_chama_cdtvei
+            // 
+            this.btn_chama_cdtvei.Location = new System.Drawing.Point(475, 115);
+            this.btn_chama_cdtvei.Name = "btn_chama_cdtvei";
+            this.btn_chama_cdtvei.Size = new System.Drawing.Size(75, 39);
+            this.btn_chama_cdtvei.TabIndex = 14;
+            this.btn_chama_cdtvei.Text = "Cadastrar Veículo";
+            this.btn_chama_cdtvei.UseVisualStyleBackColor = true;
+            this.btn_chama_cdtvei.Click += new System.EventHandler(this.btn_chama_cdtvei_Click);
+            // 
+            // frm_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(562, 366);
+            this.Controls.Add(this.btn_chama_cdtvei);
             this.Controls.Add(this.btnSaveEdit);
             this.Controls.Add(this.lblTelefoneEdit);
             this.Controls.Add(this.txtPhoneNumberEdit);
@@ -192,7 +204,7 @@
             this.Controls.Add(this.txt_telefone);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
-            this.Name = "frm_clientes";
+            this.Name = "frm_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.frm_clientes_Load);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.TextBox txtPhoneNumberEdit;
         private System.Windows.Forms.TextBox txtNameEdit;
         private System.Windows.Forms.Label lblNameEdit;
+        private System.Windows.Forms.Button btn_chama_cdtvei;
     }
 }
