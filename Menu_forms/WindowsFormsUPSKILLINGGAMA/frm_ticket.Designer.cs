@@ -199,7 +199,7 @@
             // 
             // dateEntrada
             // 
-            this.dateEntrada.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dateEntrada.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dateEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateEntrada.Location = new System.Drawing.Point(221, 146);
             this.dateEntrada.Name = "dateEntrada";
@@ -208,7 +208,7 @@
             // 
             // dataSaida
             // 
-            this.dataSaida.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dataSaida.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dataSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataSaida.Location = new System.Drawing.Point(666, 146);
             this.dataSaida.Name = "dataSaida";
