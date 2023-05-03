@@ -23,7 +23,7 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
 
         public VeiculoModel Recuperar(int id)
         {
-            throw new System.NotImplementedException();
+            return _veiculoRepository.Recuperar(id);
         }
 
         public bool Cadastrar(string marca, string modelo, string placa, int tipo_servico, int idcliente)

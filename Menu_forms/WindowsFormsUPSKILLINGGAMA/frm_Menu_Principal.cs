@@ -64,7 +64,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_cad_ticket_Click(object sender, EventArgs e)
         {
-            frm_Ticket frm = new frm_Ticket();
+            frm_Ticket frm = new frm_Ticket(contextoOpcao);
             frm.Show();
         }
 
@@ -86,7 +86,7 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void ticketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_Ticket frm = new frm_Ticket();
+            frm_Ticket frm = new frm_Ticket(contextoOpcao);
             frm.Show();
         }
     }

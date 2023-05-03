@@ -9,9 +9,8 @@ namespace WindowsFormsUPSKILLINGGAMA.Models
 
         public TipoBaseEnum TipoBaseSelecionada { get; set; }
 
-        public double ValorTarifaMinuto = 0.05D;
-        public double ValorTarifaHora = 1D;
-        public double ValorTarifaDiaria = 5D;
-        public double ValorTarifaMesalidade = 70D;
+        public double ValorTarifaHora = 7.5D;
+        public double ValorTarifaDiaria = 25D;
+        public double ValorTarifaMesalidade = 90D;
     }
 }

@@ -10,69 +10,55 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
+using WindowsFormsUPSKILLINGGAMA.DAL;
 using WindowsFormsUPSKILLINGGAMA.Models;
+using WindowsFormsUPSKILLINGGAMA.Models.DTO;
 using WindowsFormsUPSKILLINGGAMA.Services;
+using WindowsFormsUPSKILLINGGAMA.Services.Interfaces;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsUPSKILLINGGAMA
 {
     public partial class frm_Ticket : Form
-
     {
-        // Lista para armazenar as placas já cadastradas
-        List<string> placasCadastradas = new List<string>();
+        private readonly TicketService _ticketService;
+        private readonly VeiculoService _veiculoService;
+        private ContextoOpcao _contexto;
 
-        public frm_Ticket()
+        public frm_Ticket(ContextoOpcao contexto)
         {
-            InitializeComponent();
+            _ticketService = new TicketService(contexto.TipoBaseSelecionada);
+            _veiculoService = new VeiculoService(contexto.TipoBaseSelecionada);
+            _contexto = contexto;
 
-            // Preenchendo a ComboBox com os valores do enum
-            foreach (var servicoSelecionado in Enum.GetValues(typeof(TipoServicoEnum)))
-            {
-                cb_tpo_servicoent.Items.Add(servicoSelecionado);
-            }
+            InitializeComponent();
         }
+
         public void btn_reg_entrada_Click(object sender, EventArgs e)
         {
-            
-            // Obter a data e hora atual
-            DateTime dataHoraEntrada = DateTime.Now;
 
-            // Obter o tipo de serviço selecionado no ComboBox
-            foreach (var tipoServico in Enum.GetValues(typeof(TipoServicoEnum)))
+            var item = (ComboBoxVeiculos)cb_veiculo_entrada.SelectedItem;
+
+            if (!_ticketService.VeiculoEstacionado(item.Id))
             {
-                cb_tpo_servicoent.Items.Add(tipoServico);
+                var novoTicket = _ticketService.Cadastrar(item.Id, DateTime.Parse(dateEntrada.Text));
+
+                // Exibir a data e hora + tipo de serviço em um rótulo
+                lbl_dathra_entrada.Text = novoTicket.DataEntrada.ToString();
+                lbl_tpo_servico.Text = ((TipoServicoEnum)_veiculoService.Recuperar(novoTicket.IdVeiculo).TipoServico).ToString();
+
+                lbl_tpo_servico.Text = $"Valor do Mensalista: {_contexto.ValorTarifaMesalidade.ToString("N2")}\n" +
+                                       $"Valor da Diária: {_contexto.ValorTarifaDiaria.ToString("N2")}\n" +
+                                       $"Valor da Hora: {_contexto.ValorTarifaHora.ToString("N2")}";
+
+                cb_veiculo_saida.Text = string.Empty;
+                AtualizaDados();
             }
-
-            // Obter a placa inserida pelo usuário
-            string placa = txt_placa_ent.Text.Trim().ToUpper();
-
-            // Verificar se a placa já foi cadastrada
-            if (placasCadastradas.Contains(placa))
+            else
             {
-                MessageBox.Show("Já existe um ticket com esse tipo de serviço para essa placa, favor reavaliar", "Placa duplicada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Este veículo já esta estacionado no momento!");
+                AtualizaDados();
             }
-
-            // Adicionar a placa à lista de placas cadastradas
-            placasCadastradas.Add(placa);
-
-
-            // Definir o objeto ValorServico com os valores desejados
-            ValorServicoModel valorServico = new ValorServicoModel();
-            int mensalista = valorServico.Mensalista; // retorna 90
-            int diaria = valorServico.Diaria; // retorna 25
-            double hora = valorServico.Hora; // retorna 7.5
-
-
-            // Exibir a data e hora + tipo de serviço em um rótulo
-            lbl_dathra_entrada.Text = dataHoraEntrada.ToString();
-            lbl_tpo_servico.Text = $"Valor do Mensalista: {valorServico.Mensalista}\n" +
-                                   $"Valor da Diária: {valorServico.Diaria}\n" +
-                                   $"Valor da Hora: {valorServico.Hora}";
-            
-            // Limpar o campo de placa
-            txt_placa_ent.Text = "";
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -102,62 +88,20 @@ namespace WindowsFormsUPSKILLINGGAMA
         }
 
         public void btn_reg_saida_Click(object sender, EventArgs e)
-        {   
-            // Obter a data e hora atual
-            DateTime dataHoraSaida = DateTime.Now;
-            
-            // Obter a placa inserida pelo usuário
-            string placa = txt_placa_sai.Text.Trim().ToUpper();
+        {
+            var veiculo = (ComboBoxVeiculos)cb_veiculo_saida.SelectedItem;
 
-            // Verificar se a placa já foi cadastrada
-            if (!placasCadastradas.Contains(placa))
-            {
-                MessageBox.Show("Não foi encontrada nenhuma entrada para esta placa", "Placa não encontrada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            /*
-            // Encontrar o horário de entrada da placa
-            DateTime dataHoraEntrada = DateTime.MinValue;
-            foreach (var ticket in TicketModel)
-            {
-                if (ticket.Placa == placa)
-                {
-                    dataHoraEntrada = ticket.DataHoraEntrada;
-                    break;
-                }
-             }*/
+            var ticket = (_ticketService.Listar()).Where(t => t.IdVeiculo == veiculo.Id && t.DataSaida == "").First();
 
-            // Definir o objeto ValorServico com os valores desejados
+            var ticketAtualizado = _ticketService.Alterar(ticket.Id, veiculo.Id, DateTime.Parse(ticket.DataEntrada), DateTime.Parse(dataSaida.Text));
 
-            /*
-            // Calcular o valor do serviço
-            TimeSpan tempoEstacionado = dataHoraSaida - dataHoraEntrada;
-            double valorServico = 0;
-            if (tempoEstacionado.TotalDays >= 1)
-            {
-                valorServico = valorServico.Diaria * Math.Ceiling(tempoEstacionado.TotalDays);
-            }
-            else if (tempoEstacionado.TotalHours >= 1)
-            {
-                valorServico = valorServico.Hora * Math.Ceiling(tempoEstacionado.TotalHours);
-            }
-            else
-            {
-                valorServico = valorServico.Hora;
-            }
+            lbl_dathra_entrada2.Text = ticketAtualizado.DataEntrada;
+            lbl_dathra_saida.Text = ticketAtualizado.DataSaida;
+            lbl_tempo_estacionado.Text = (DateTime.Parse(ticketAtualizado.DataSaida).Subtract(DateTime.Parse(ticketAtualizado.DataEntrada))).ToString();
+            lbl_vlr_servico.Text = _ticketService.CalculaTotalTicket(ticketAtualizado, _contexto).ToString("N2");
 
-            // Exibir os detalhes do ticket em um rótulo
-            lbl_dathra_saida.Text = dataHoraSaida.ToString();
-            lbl_tempo_estacionado.Text = $"Tempo estacionado: {tempoEstacionado}";
-            lbl_vlr_servico.Text = $"Valor do serviço: R${valorServico.ToString("0.00")}";  */
-
-            // Remover a placa da lista de placas cadastradas
-            placasCadastradas.Remove(placa);
-
-            // Limpar o campo de placa
-            txt_placa_sai.Text = "";
-           
+            cb_veiculo_saida.Text = string.Empty;
+            AtualizaDados();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -168,6 +112,55 @@ namespace WindowsFormsUPSKILLINGGAMA
                  Close();
              }
             
+        }
+
+        private void frm_Ticket_Load(object sender, EventArgs e)
+        {
+            AtualizaDados();
+        }
+
+        private void AtualizaDados()
+        {
+            var veiculosCadastrados = _veiculoService.Listar();
+            List<ComboBoxVeiculos> veiculos = new List<ComboBoxVeiculos>();
+            BindingSource bindingSource = new BindingSource();
+
+            foreach (var veiculo in veiculosCadastrados.Where(x => !_ticketService.VeiculoEstacionado(x.Id)))
+            {
+                veiculos.Add(new ComboBoxVeiculos(veiculo.Id, $"Mod: {veiculo.Modelo}, Placa:{veiculo.Placa}"));
+            }
+
+            bindingSource.DataSource = veiculos;
+            if (veiculos.Any())
+            {
+                //veiculos nao estacionados
+                cb_veiculo_entrada.DataSource = bindingSource;
+                cb_veiculo_entrada.ValueMember = "Id";
+                cb_veiculo_entrada.DisplayMember = "Display";
+            }
+            else
+            {
+                cb_veiculo_saida.DataSource = bindingSource;
+            }
+
+            veiculos.Clear();
+            foreach (var veiculo in veiculosCadastrados.Where(x => _ticketService.VeiculoEstacionado(x.Id)))
+            {
+                veiculos.Add(new ComboBoxVeiculos(veiculo.Id, $"Mod:{veiculo.Modelo}, Placa:{veiculo.Placa}"));
+            }
+
+            bindingSource.DataSource = veiculos;
+            if (veiculos.Any())
+            {
+                // veiculos estacionados.
+                cb_veiculo_saida.DataSource = bindingSource;
+                cb_veiculo_saida.ValueMember = "Id";
+                cb_veiculo_saida.DisplayMember = "Display";
+            }
+            else
+            {
+                cb_veiculo_saida.DataSource = bindingSource;
+            }
         }
     }
 }

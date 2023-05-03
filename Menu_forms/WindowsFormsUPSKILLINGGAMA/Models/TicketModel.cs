@@ -6,8 +6,8 @@ namespace WindowsFormsUPSKILLINGGAMA.Models
     {
         public int Id { get; set; }
         public int IdVeiculo { get; set; }
-        public DateTime DataEntrada { get; set; }
-        public DateTime? DataSaida { get; set; } = null;
+        public string DataEntrada { get; set; }
+        public string DataSaida { get; set; } = "";
 
         public TicketModel() {}
 
@@ -15,7 +15,7 @@ namespace WindowsFormsUPSKILLINGGAMA.Models
         {
             Id = id;
             IdVeiculo = idVeiculo;
-            DataEntrada = DateTime.Now;
+            DataEntrada = DateTime.Now.ToString();
         }
     }
 }

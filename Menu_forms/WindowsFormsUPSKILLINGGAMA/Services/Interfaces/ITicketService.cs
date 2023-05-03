@@ -9,8 +9,8 @@ namespace WindowsFormsUPSKILLINGGAMA.Services.Interfaces
     {
         List<TicketModel> Listar();
         TicketModel Recuperar(int id);
-        bool Cadastrar(int idveiculo);
-        bool Alterar(int id, int idveiculo, DateTime dataCadastro, DateTime? dataSaida);
+        TicketModel Cadastrar(int idveiculo, DateTime dataEntrada);
+        TicketModel Alterar(int id, int idveiculo, DateTime dataCadastro, DateTime? dataSaida);
         bool Excluir(int id);
     }
 }
