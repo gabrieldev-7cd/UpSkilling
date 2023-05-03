@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Models\DTO\ListaVeiculoDto.cs" />
+    <Compile Include="Models\DTO\ListaVendasDto.cs" />
     <Compile Include="Models\TicketModel.cs" />
     <Compile Include="Models\ContextoOpcao.cs" />
     <Compile Include="Models\VeiculoModel.cs" />

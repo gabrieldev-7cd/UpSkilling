@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
 using WindowsFormsUPSKILLINGGAMA.Models;
+using WindowsFormsUPSKILLINGGAMA.Models.DTO;
 using WindowsFormsUPSKILLINGGAMA.Services;
 
 namespace WindowsFormsUPSKILLINGGAMA
@@ -11,11 +12,13 @@ namespace WindowsFormsUPSKILLINGGAMA
     {
         private readonly VeiculoService _veiculoService;
         private readonly TicketService  _ticketService;
+        private readonly ContextoOpcao _contexto;
 
         public frm_Historico_Vendas(ContextoOpcao contexto)
         {
             _ticketService = new TicketService(contexto.TipoBaseSelecionada);
             _veiculoService = new VeiculoService(contexto.TipoBaseSelecionada);
+            _contexto = contexto;
 
             InitializeComponent();
         }
@@ -39,7 +42,7 @@ namespace WindowsFormsUPSKILLINGGAMA
         private void AtualizarDados()
         {
             BindingSource dataBinding = new BindingSource();
-            dataBinding.DataSource = _ticketService.Listar();
+            dataBinding.DataSource = _ticketService.listagemVendas(_contexto);
             dataGridTickets.DataSource = dataBinding;
             dataGridTickets.AllowUserToAddRows = false;
         }
@@ -67,6 +70,11 @@ namespace WindowsFormsUPSKILLINGGAMA
             {
                 Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AtualizarDados();
         }
     }
 }

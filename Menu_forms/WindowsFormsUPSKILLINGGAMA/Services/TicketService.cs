@@ -4,6 +4,7 @@ using System.Linq;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
 using WindowsFormsUPSKILLINGGAMA.DAL;
 using WindowsFormsUPSKILLINGGAMA.Models;
+using WindowsFormsUPSKILLINGGAMA.Models.DTO;
 using WindowsFormsUPSKILLINGGAMA.Services.Interfaces;
 
 namespace WindowsFormsUPSKILLINGGAMA.Services
@@ -90,6 +91,27 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
                 default:
                     return valorTotal;
             }
+        }
+
+        public List<ListaVendasDto> listagemVendas(ContextoOpcao contexto)
+        {
+            List<ListaVendasDto> lista = new List<ListaVendasDto>();
+            var tickets = Listar();
+
+            foreach(var ticket in tickets)
+            {
+                var veiculo = _veiculoRepository.Recuperar(ticket.IdVeiculo);
+                var registro = new ListaVendasDto();
+                registro.Id = ticket.Id;
+                registro.DataEntrada = ticket.DataEntrada;
+                registro.DataSaida = ticket.DataSaida;
+                registro.Veiculo = $"Fab:{veiculo.Marca} Mod: {veiculo.Modelo}";
+                registro.Placa = veiculo.Placa;
+                registro.Valor = $"R$ {CalculaTotalTicket(ticket, contexto).ToString("N2")}";
+                lista.Add(registro);
+            }
+
+            return lista;
         }
     }
 }

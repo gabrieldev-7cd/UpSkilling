@@ -34,6 +34,7 @@
             this.lbl_fil_servico = new System.Windows.Forms.Label();
             this.cb_fil_servico = new System.Windows.Forms.ComboBox();
             this.btn_voltar_hist = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             this.dataGridTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridTickets.Location = new System.Drawing.Point(12, 79);
             this.dataGridTickets.Name = "dataGridTickets";
-            this.dataGridTickets.Size = new System.Drawing.Size(468, 209);
+            this.dataGridTickets.Size = new System.Drawing.Size(642, 209);
             this.dataGridTickets.TabIndex = 0;
             this.dataGridTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTickets_CellContentClick);
             // 
@@ -83,26 +84,37 @@
             // 
             // btn_voltar_hist
             // 
-            this.btn_voltar_hist.Location = new System.Drawing.Point(382, 50);
+            this.btn_voltar_hist.Location = new System.Drawing.Point(531, 50);
             this.btn_voltar_hist.Name = "btn_voltar_hist";
-            this.btn_voltar_hist.Size = new System.Drawing.Size(98, 23);
+            this.btn_voltar_hist.Size = new System.Drawing.Size(123, 23);
             this.btn_voltar_hist.TabIndex = 6;
             this.btn_voltar_hist.Text = "Voltar aoMenu";
             this.btn_voltar_hist.UseVisualStyleBackColor = true;
             this.btn_voltar_hist.Click += new System.EventHandler(this.btn_voltar_hist_Click);
             // 
-            // frm_hist_vendas
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(554, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // frm_Historico_Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 300);
+            this.ClientSize = new System.Drawing.Size(666, 300);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_voltar_hist);
             this.Controls.Add(this.cb_fil_servico);
             this.Controls.Add(this.lbl_fil_servico);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbl_fil_data);
             this.Controls.Add(this.dataGridTickets);
-            this.Name = "frm_hist_vendas";
+            this.Name = "frm_Historico_Vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Histórico de vendas";
             this.Load += new System.EventHandler(this.frm_hist_vendas_Load);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Label lbl_fil_servico;
         private System.Windows.Forms.ComboBox cb_fil_servico;
         private System.Windows.Forms.Button btn_voltar_hist;
+        private System.Windows.Forms.Button button1;
     }
 }
