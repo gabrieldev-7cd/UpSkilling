@@ -1,9 +1,10 @@
 ﻿
 using WindowsFormsUPSKILLINGGAMA.DAL;
+using WindowsFormsUPSKILLINGGAMA.Models;
 
 namespace WindowsFormsUPSKILLINGGAMA.Configurations
 {
-    public static class ConfigurationBase<T>
+    public static class ConfigurationBase<T> where T : ModelBase
     {
         public static GenericRepository<T> SelecionaDriver(TipoBaseEnum driver)
         {

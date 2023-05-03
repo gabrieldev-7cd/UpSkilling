@@ -1,8 +1,7 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA.Models
 {
-    public class VeiculoModel
+    public class VeiculoModel : ModelBase
     {
-        public int Id { get; set; }
         public int IdCliente { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }

@@ -71,7 +71,8 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
 
             var tipoServicoVeiculo = (TipoServicoEnum)_veiculoRepository.Recuperar(ticket.IdVeiculo).TipoServico;
 
-            var diff = DateTime.Parse(ticket.DataSaida).Subtract(DateTime.Parse(ticket.DataEntrada));
+            //Se o ticket não foi finalizado o valor vai ser processado a partir da data de início até o atual momento.
+            var diff = DateTime.Parse((ticket.DataSaida.Equals("") ? DateTime.Now.ToString() : ticket.DataSaida)).Subtract(DateTime.Parse(ticket.DataEntrada));
 
             switch(tipoServicoVeiculo)
             {

@@ -5,10 +5,11 @@ using WindowsFormsUPSKILLINGGAMA.DAL.Interfaces;
 using System.IO;
 using System.Text.Json;
 using System.Linq;
+using WindowsFormsUPSKILLINGGAMA.Models;
 
 namespace WindowsFormsUPSKILLINGGAMA.DAL
 {
-    public class JsonGenericRepository<T> : IBaseRepository<T>
+    public class JsonGenericRepository<T> : IBaseRepository<T> where T : ModelBase
     {
         private string _nomeArquivo;
         private string _path;
@@ -36,7 +37,9 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public T Recuperar(int id)
         {
-            throw new NotImplementedException();
+            var entidades = Listar();
+
+            return entidades.Where(x => x.Id == id).FirstOrDefault();
         }
         public bool Cadastrar(T entity)
         {
@@ -53,7 +56,22 @@ namespace WindowsFormsUPSKILLINGGAMA.DAL
 
         public bool Alterar(T entity)
         {
-            throw new NotImplementedException();
+            var entidades = this.Listar();
+
+            var entidadeAtualizar = entidades.FindIndex(x => x.Id == entity.Id);
+
+            if(entidadeAtualizar != null)
+            {
+                entidades.RemoveAt(entidadeAtualizar);
+                entidades.Add(entity);
+
+                string stringJson = JsonSerializer.Serialize(entidades);
+                File.WriteAllText(_path, stringJson);
+
+                return true;
+            }
+
+            return false;
         }
 
         public bool Excluir(int id)

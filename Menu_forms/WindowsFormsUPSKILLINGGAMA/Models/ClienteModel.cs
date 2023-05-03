@@ -1,8 +1,7 @@
 ﻿namespace WindowsFormsUPSKILLINGGAMA.Models
 {
-    public class ClienteModel
+    public class ClienteModel : ModelBase
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
 
