@@ -59,6 +59,7 @@
             this.lbl_dathra_entrada.Size = new System.Drawing.Size(119, 13);
             this.lbl_dathra_entrada.TabIndex = 1;
             this.lbl_dathra_entrada.Text = "Data e Hora da entrada";
+            this.lbl_dathra_entrada.Click += new System.EventHandler(this.lbl_dathra_entrada_Click_1);
             // 
             // lbl_tpo_servico
             // 
@@ -83,6 +84,7 @@
             this.cb_tpo_servicoent.Name = "cb_tpo_servicoent";
             this.cb_tpo_servicoent.Size = new System.Drawing.Size(112, 21);
             this.cb_tpo_servicoent.TabIndex = 4;
+            this.cb_tpo_servicoent.SelectedIndexChanged += new System.EventHandler(this.cb_tpo_servicoent_SelectedIndexChanged);
             // 
             // btn_reg_entrada
             // 
@@ -217,7 +219,7 @@
             this.btn_menu.UseVisualStyleBackColor = false;
             this.btn_menu.Click += new System.EventHandler(this.button1_Click);
             // 
-            // frm_ticket
+            // frm_Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,7 +243,7 @@
             this.Controls.Add(this.lbl_tpo_servico);
             this.Controls.Add(this.lbl_dathra_entrada);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "frm_ticket";
+            this.Name = "frm_Ticket";
             this.Text = "Cadastro de ticket";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

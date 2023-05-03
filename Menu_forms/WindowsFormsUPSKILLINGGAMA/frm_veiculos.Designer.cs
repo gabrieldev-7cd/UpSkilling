@@ -34,16 +34,16 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.lbl_modelo = new System.Windows.Forms.Label();
-            this.txt_modelo = new System.Windows.Forms.TextBox();
             this.lbl_id_cliente = new System.Windows.Forms.Label();
             this.lbl_placa = new System.Windows.Forms.Label();
-            this.txt_placa = new System.Windows.Forms.TextBox();
             this.selectServico = new System.Windows.Forms.ComboBox();
             this.lbl_tpo_servico = new System.Windows.Forms.Label();
             this.cb_id_cliente = new System.Windows.Forms.ComboBox();
-            this.txt_marca = new System.Windows.Forms.TextBox();
             this.lbl_marca = new System.Windows.Forms.Label();
             this.btn_salvar_editv = new System.Windows.Forms.Button();
+            this.txt_placa = new System.Windows.Forms.TextBox();
+            this.txt_modelo = new System.Windows.Forms.TextBox();
+            this.txt_marca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVeiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             this.btn_excluir.TabIndex = 14;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click_1);
             // 
             // btn_cadastrar
             // 
@@ -107,13 +108,6 @@
             this.lbl_modelo.TabIndex = 12;
             this.lbl_modelo.Text = "Modelo";
             // 
-            // txt_modelo
-            // 
-            this.txt_modelo.Location = new System.Drawing.Point(73, 64);
-            this.txt_modelo.Name = "txt_modelo";
-            this.txt_modelo.Size = new System.Drawing.Size(145, 20);
-            this.txt_modelo.TabIndex = 11;
-            // 
             // lbl_id_cliente
             // 
             this.lbl_id_cliente.AutoSize = true;
@@ -131,13 +125,6 @@
             this.lbl_placa.Size = new System.Drawing.Size(34, 13);
             this.lbl_placa.TabIndex = 18;
             this.lbl_placa.Text = "Placa";
-            // 
-            // txt_placa
-            // 
-            this.txt_placa.Location = new System.Drawing.Point(73, 90);
-            this.txt_placa.Name = "txt_placa";
-            this.txt_placa.Size = new System.Drawing.Size(145, 20);
-            this.txt_placa.TabIndex = 19;
             // 
             // selectServico
             // 
@@ -165,13 +152,6 @@
             this.cb_id_cliente.Size = new System.Drawing.Size(121, 21);
             this.cb_id_cliente.TabIndex = 22;
             // 
-            // txt_marca
-            // 
-            this.txt_marca.Location = new System.Drawing.Point(73, 39);
-            this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(145, 20);
-            this.txt_marca.TabIndex = 24;
-            // 
             // lbl_marca
             // 
             this.lbl_marca.AutoSize = true;
@@ -193,7 +173,29 @@
             this.btn_salvar_editv.UseVisualStyleBackColor = true;
             this.btn_salvar_editv.Click += new System.EventHandler(this.btn_salvar_editv_Click);
             // 
-            // frm_veiculos
+            // txt_placa
+            // 
+            this.txt_placa.Location = new System.Drawing.Point(73, 90);
+            this.txt_placa.Name = "txt_placa";
+            this.txt_placa.Size = new System.Drawing.Size(145, 20);
+            this.txt_placa.TabIndex = 19;
+            this.txt_placa.TextChanged += new System.EventHandler(this.txt_placa_TextChanged);
+            // 
+            // txt_modelo
+            // 
+            this.txt_modelo.Location = new System.Drawing.Point(73, 64);
+            this.txt_modelo.Name = "txt_modelo";
+            this.txt_modelo.Size = new System.Drawing.Size(145, 20);
+            this.txt_modelo.TabIndex = 11;
+            // 
+            // txt_marca
+            // 
+            this.txt_marca.Location = new System.Drawing.Point(73, 39);
+            this.txt_marca.Name = "txt_marca";
+            this.txt_marca.Size = new System.Drawing.Size(145, 20);
+            this.txt_marca.TabIndex = 24;
+            // 
+            // frm_Veiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,7 +216,7 @@
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.txt_modelo);
             this.Controls.Add(this.lbl_id_cliente);
-            this.Name = "frm_veiculos";
+            this.Name = "frm_Veiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículos";
             this.Load += new System.EventHandler(this.frm_veiculos_Load);
@@ -232,15 +234,15 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.Label lbl_modelo;
-        private System.Windows.Forms.TextBox txt_modelo;
         private System.Windows.Forms.Label lbl_id_cliente;
         private System.Windows.Forms.Label lbl_placa;
-        private System.Windows.Forms.TextBox txt_placa;
         private System.Windows.Forms.ComboBox selectServico;
         private System.Windows.Forms.Label lbl_tpo_servico;
         private System.Windows.Forms.ComboBox cb_id_cliente;
-        private System.Windows.Forms.TextBox txt_marca;
         private System.Windows.Forms.Label lbl_marca;
         private System.Windows.Forms.Button btn_salvar_editv;
+        private System.Windows.Forms.TextBox txt_placa;
+        private System.Windows.Forms.TextBox txt_modelo;
+        private System.Windows.Forms.TextBox txt_marca;
     }
 }

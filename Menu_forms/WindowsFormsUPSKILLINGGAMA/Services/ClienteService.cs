@@ -46,6 +46,18 @@ namespace WindowsFormsUPSKILLINGGAMA.Services
             return _clienteRepository.Alterar(cliente);
         }
 
+        public bool EditarVeiculo(string marca, string modelo, string placa)
+        {
+            VeiculoModel veiculo = new VeiculoModel            
+            {
+                Marca = marca,
+                Modelo = modelo,
+                Placa = placa
+            };
+
+            return true;
+        }
+
         public bool Excluir(int id)
         {
             return _clienteRepository.Excluir(id);

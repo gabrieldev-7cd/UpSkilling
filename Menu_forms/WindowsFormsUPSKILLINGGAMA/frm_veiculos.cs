@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsUPSKILLINGGAMA.Configurations;
@@ -111,6 +112,49 @@ namespace WindowsFormsUPSKILLINGGAMA
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btn_salvar_editv_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_marca.Text)
+                || string.IsNullOrWhiteSpace(txt_modelo.Text)
+                || string.IsNullOrWhiteSpace(txt_placa.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            var row = dataGridVeiculos.CurrentCell.OwningRow;
+            int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
+
+            bool resultado = _clienteService.EditarVeiculo(txt_marca.Text, txt_modelo.Text, txt_placa.Text);
+
+            btn_salvar_editv.Enabled = false;
+
+            MessageBox.Show(resultado == true ? "Dados atualizados com sucesso!"
+                : "Não foi possível atualizar o cliente!");
+
+            txt_marca.Text = string.Empty;
+            txt_modelo.Text = string.Empty;
+            txt_placa.Text = string.Empty;
+
+            AtualizarDados();
+        }
+
+        private void txt_placa_TextChanged(object sender, EventArgs e)
+        {
+            // Validar a placa informada
+            string placa = txt_placa.Text.ToUpper();            
+            if (txt_placa.Text.Length > 7)
+            {
+                MessageBox.Show("Placa inválida! Digite uma placa no formato AAA-1234.");
+                return;
+            }
+        }
+
+        private void btn_excluir_Click_1(object sender, EventArgs e)
+        {
             var row = dataGridVeiculos.CurrentCell.OwningRow;
 
             if (row != null)
@@ -130,32 +174,6 @@ namespace WindowsFormsUPSKILLINGGAMA
 
 
             AtualizarDados();
-        }
-
-        private void btn_salvar_editv_Click(object sender, EventArgs e)
-        {/*
-            if (string.IsNullOrWhiteSpace(txt_marca.Text)
-                || string.IsNullOrWhiteSpace(txt_modelo.Text)
-                || string.IsNullOrWhiteSpace(txt_placa.Text))
-            {
-                MessageBox.Show("Preencha todos os campos!");
-                return;
-            }
-
-            var row = dataGridViewClientes.CurrentCell.OwningRow;
-            int idCliente = int.Parse(row.Cells["ID"].Value.ToString());
-
-            bool resultado = _clienteService.Alterar(idCliente, txt_marca.Text, txtPhoneNumberEdit.Text);
-
-            btnSaveEdit.Enabled = false;
-
-            MessageBox.Show(resultado == true ? "Dados atualizados com sucesso!"
-                : "Não foi possível atualizar o cliente!");
-
-            txtNameEdit.Text = string.Empty;
-            txtPhoneNumberEdit.Text = string.Empty;
-
-            AtualizarDados();*/
         }
     }
 }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.lbl_old_marca = new System.Windows.Forms.Label();
-            this.txt_old_marca = new System.Windows.Forms.TextBox();
-            this.txt_old_modelo = new System.Windows.Forms.TextBox();
-            this.txt_old_placa = new System.Windows.Forms.TextBox();
             this.txt_new_marca = new System.Windows.Forms.TextBox();
             this.txt_new_modelo = new System.Windows.Forms.TextBox();
             this.txt_new_placa = new System.Windows.Forms.TextBox();
@@ -46,6 +43,9 @@
             this.btn_excluir_registro = new System.Windows.Forms.Button();
             this.btn_voltar_menuP = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cb_old_marca = new System.Windows.Forms.ComboBox();
+            this.cb_old_modelo = new System.Windows.Forms.ComboBox();
+            this.cb_old_placa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,27 +57,6 @@
             this.lbl_old_marca.Size = new System.Drawing.Size(64, 13);
             this.lbl_old_marca.TabIndex = 0;
             this.lbl_old_marca.Text = "Marca Atual";
-            // 
-            // txt_old_marca
-            // 
-            this.txt_old_marca.Location = new System.Drawing.Point(76, 75);
-            this.txt_old_marca.Name = "txt_old_marca";
-            this.txt_old_marca.Size = new System.Drawing.Size(145, 20);
-            this.txt_old_marca.TabIndex = 11;
-            // 
-            // txt_old_modelo
-            // 
-            this.txt_old_modelo.Location = new System.Drawing.Point(76, 101);
-            this.txt_old_modelo.Name = "txt_old_modelo";
-            this.txt_old_modelo.Size = new System.Drawing.Size(145, 20);
-            this.txt_old_modelo.TabIndex = 12;
-            // 
-            // txt_old_placa
-            // 
-            this.txt_old_placa.Location = new System.Drawing.Point(76, 127);
-            this.txt_old_placa.Name = "txt_old_placa";
-            this.txt_old_placa.Size = new System.Drawing.Size(145, 20);
-            this.txt_old_placa.TabIndex = 13;
             // 
             // txt_new_marca
             // 
@@ -170,6 +149,7 @@
             this.btn_save_newveiculo.TabIndex = 24;
             this.btn_save_newveiculo.Text = "Salvar Novo Veículo";
             this.btn_save_newveiculo.UseVisualStyleBackColor = true;
+            this.btn_save_newveiculo.Click += new System.EventHandler(this.btn_save_newveiculo_Click);
             // 
             // btn_excluir_registro
             // 
@@ -179,6 +159,7 @@
             this.btn_excluir_registro.TabIndex = 25;
             this.btn_excluir_registro.Text = "Excluir Registro";
             this.btn_excluir_registro.UseVisualStyleBackColor = true;
+            this.btn_excluir_registro.Click += new System.EventHandler(this.btn_excluir_registro_Click);
             // 
             // btn_voltar_menuP
             // 
@@ -197,11 +178,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(582, 222);
             this.dataGridView1.TabIndex = 27;
             // 
+            // cb_old_marca
+            // 
+            this.cb_old_marca.FormattingEnabled = true;
+            this.cb_old_marca.Location = new System.Drawing.Point(76, 75);
+            this.cb_old_marca.Name = "cb_old_marca";
+            this.cb_old_marca.Size = new System.Drawing.Size(145, 21);
+            this.cb_old_marca.TabIndex = 28;
+            this.cb_old_marca.SelectedIndexChanged += new System.EventHandler(this.cb_old_marca_SelectedIndexChanged);
+            // 
+            // cb_old_modelo
+            // 
+            this.cb_old_modelo.FormattingEnabled = true;
+            this.cb_old_modelo.Location = new System.Drawing.Point(76, 100);
+            this.cb_old_modelo.Name = "cb_old_modelo";
+            this.cb_old_modelo.Size = new System.Drawing.Size(145, 21);
+            this.cb_old_modelo.TabIndex = 29;
+            // 
+            // cb_old_placa
+            // 
+            this.cb_old_placa.FormattingEnabled = true;
+            this.cb_old_placa.Location = new System.Drawing.Point(76, 126);
+            this.cb_old_placa.Name = "cb_old_placa";
+            this.cb_old_placa.Size = new System.Drawing.Size(145, 21);
+            this.cb_old_placa.TabIndex = 30;
+            // 
             // frm_EditarVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 411);
+            this.Controls.Add(this.cb_old_placa);
+            this.Controls.Add(this.cb_old_modelo);
+            this.Controls.Add(this.cb_old_marca);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_voltar_menuP);
             this.Controls.Add(this.btn_excluir_registro);
@@ -216,9 +225,6 @@
             this.Controls.Add(this.txt_new_placa);
             this.Controls.Add(this.txt_new_modelo);
             this.Controls.Add(this.txt_new_marca);
-            this.Controls.Add(this.txt_old_placa);
-            this.Controls.Add(this.txt_old_modelo);
-            this.Controls.Add(this.txt_old_marca);
             this.Controls.Add(this.lbl_old_marca);
             this.Name = "frm_EditarVeiculo";
             this.Text = "Editar Cadastro de Veículos";
@@ -231,9 +237,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_old_marca;
-        private System.Windows.Forms.TextBox txt_old_marca;
-        private System.Windows.Forms.TextBox txt_old_modelo;
-        private System.Windows.Forms.TextBox txt_old_placa;
         private System.Windows.Forms.TextBox txt_new_marca;
         private System.Windows.Forms.TextBox txt_new_modelo;
         private System.Windows.Forms.TextBox txt_new_placa;
@@ -248,5 +251,8 @@
         private System.Windows.Forms.Button btn_excluir_registro;
         private System.Windows.Forms.Button btn_voltar_menuP;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cb_old_marca;
+        private System.Windows.Forms.ComboBox cb_old_modelo;
+        private System.Windows.Forms.ComboBox cb_old_placa;
     }
 }

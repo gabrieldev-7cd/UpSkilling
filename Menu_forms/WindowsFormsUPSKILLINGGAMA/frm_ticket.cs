@@ -32,8 +32,16 @@ namespace WindowsFormsUPSKILLINGGAMA
             }
         }
         public void btn_reg_entrada_Click(object sender, EventArgs e)
-        {
-            
+        {   /*
+            // Validar a placa informada ** corrigir
+            string CadastroPlaca = txt_placa_ent.Text.ToUpper();
+            Regex placaRegex = new Regex(@"^[A-Z]{3}\-\d{4}$");
+            if (!placaRegex.IsMatch(CadastroPlaca))
+            {
+                MessageBox.Show("Placa inválida! Digite uma placa no formato AAA-1234.");
+                return;
+            }*/
+
             // Obter a data e hora atual
             DateTime dataHoraEntrada = DateTime.Now;
 
@@ -126,11 +134,11 @@ namespace WindowsFormsUPSKILLINGGAMA
                     dataHoraEntrada = ticket.DataHoraEntrada;
                     break;
                 }
-             }*/
+             }
 
             // Definir o objeto ValorServico com os valores desejados
 
-            /*
+            
             // Calcular o valor do serviço
             TimeSpan tempoEstacionado = dataHoraSaida - dataHoraEntrada;
             double valorServico = 0;
@@ -168,6 +176,16 @@ namespace WindowsFormsUPSKILLINGGAMA
                  Close();
              }
             
+        }
+
+        private void lbl_dathra_entrada_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_tpo_servicoent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
